@@ -399,6 +399,7 @@ h1,h2{font-family:"Cormorant Garamond",Georgia,serif;line-height:1.08;letter-spa
 .person{cursor:pointer;transition:transform .2s,box-shadow .2s}.person:hover,.person:focus-visible{transform:translateY(-3px);box-shadow:0 12px 28px #00000018;outline:2px solid var(--gold,#a8874a);outline-offset:3px}
 @media(max-width:600px){.profile-modal{grid-template-columns:1fr;gap:14px}.profile-modal img{max-height:260px;object-position:center 25%}}
 
+/* gallery-seven-photos */
 #apoie .gallery-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
 #apoie .gallery-item{overflow:hidden;position:relative}
 #apoie .gallery-item img{width:100%;height:190px;object-fit:cover;display:block;transition:transform .35s ease}
@@ -406,11 +407,13 @@ h1,h2{font-family:"Cormorant Garamond",Georgia,serif;line-height:1.08;letter-spa
 @media(max-width:900px){#apoie .gallery-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:520px){#apoie .gallery-grid{grid-template-columns:1fr 1fr}#apoie .gallery-item img{height:140px}}
 
+/* baptism-image-enhancement */
 .sacrament-image{position:relative;overflow:hidden}
 .sacrament-image .baptism-feature-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;display:block}
 .sacrament-image:has(.baptism-feature-img)::before{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(20,15,10,.5),transparent 45%);z-index:1}
 .sacrament-image:has(.baptism-feature-img) span{position:absolute;z-index:2;bottom:1.25rem;left:1.25rem;color:white}
 
+/* site-enhancements-2026 */
 .nav-action{position:relative;isolation:isolate;overflow:visible}.nav-action::after{content:"";position:absolute;inset:-5px;border-radius:999px;border:1px solid rgba(210,168,74,.75);opacity:0;pointer-events:none;animation:titheGlow 4.8s ease-in-out infinite}.tithe-heart{font-size:1.12em;margin-right:5px;display:inline-block;animation:heartBeat 2.8s ease-in-out infinite}
 @keyframes titheGlow{0%,68%,100%{opacity:0;transform:scale(.96);box-shadow:0 0 0 transparent}78%{opacity:.9;transform:scale(1.04);box-shadow:0 0 18px rgba(218,177,78,.4)}88%{opacity:.35;transform:scale(1.01)}}@keyframes heartBeat{0%,100%{transform:scale(1)}8%{transform:scale(1.18)}16%{transform:scale(1)}24%{transform:scale(1.12)}32%{transform:scale(1)}}
 .mass-strip{padding:25px 0;background:linear-gradient(135deg,#4b2034,#6d3049)}.mass-inner{align-items:flex-start;gap:22px}.mass-inner>strong{font-size:25px;min-width:180px}.mass-meta{gap:14px;flex:1}.mass-meta span{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);border-radius:13px;padding:13px 17px;font-size:15px;min-width:190px}.mass-meta b{font-size:17px;margin-bottom:4px}
@@ -421,6 +424,7 @@ h1,h2{font-family:"Cormorant Garamond",Georgia,serif;line-height:1.08;letter-spa
 .whatsapp-float{position:fixed;right:20px;bottom:20px;z-index:45;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;background:#25d366;color:#fff;text-decoration:none;font-size:27px;font-weight:900;box-shadow:0 8px 25px rgba(0,0,0,.22);border:3px solid white}.whatsapp-float:hover{transform:translateY(-3px) scale(1.04)}
 @media(max-width:720px){.mass-inner{display:block}.mass-inner>strong{display:block;margin-bottom:14px}.mass-meta{display:grid;grid-template-columns:1fr 1fr}.mass-meta span{min-width:0;padding:12px;font-size:13px}.mass-meta b{font-size:15px}.contact-layout{grid-template-columns:1fr;gap:24px}.community-modal-gallery{grid-template-columns:repeat(2,minmax(0,1fr))}.community-modal-gallery .community-gallery-item{height:115px}}
 
+/* contact-layout-optimization */
 #contato .contact-grid-unified{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:stretch}
 #contato .contact-info-card,#contato .contact-form-card{padding:28px;border-radius:20px;background:#fff;border:1px solid rgba(100,55,70,.12);box-shadow:0 12px 32px rgba(55,25,38,.06)}
 #contato .contact-info-card h3{display:flex;align-items:center;gap:10px}
@@ -435,6 +439,7 @@ h1,h2{font-family:"Cormorant Garamond",Georgia,serif;line-height:1.08;letter-spa
 #contato .contact-form-inline button{justify-self:start}
 @media(max-width:760px){#contato .contact-grid-unified{grid-template-columns:1fr}#contato .contact-form-inline{grid-template-columns:1fr}#contato .contact-form-inline .message-field{grid-column:auto}}
 
+/* mass-strip-clean-typography */
 #missas .mass-meta{gap:30px!important;align-items:center!important}
 #missas .mass-meta span{background:transparent!important;border:0!important;border-radius:0!important;box-shadow:none!important;padding:0 24px 0 0!important;min-width:0!important;font-size:16px!important;line-height:1.45!important;color:#fff!important}
 #missas .mass-meta b{font-size:17px!important;font-weight:800!important;margin:0 0 5px!important;letter-spacing:.01em}
@@ -442,6 +447,7 @@ h1,h2{font-family:"Cormorant Garamond",Georgia,serif;line-height:1.08;letter-spa
 @media(max-width:900px){#missas .mass-meta{gap:15px!important}#missas .mass-meta span{padding-right:12px!important;font-size:15px!important}#missas .mass-meta span+span{padding-left:0!important}}
 @media(max-width:650px){#missas .mass-meta{gap:12px!important}#missas .mass-meta span,#missas .mass-meta span+span{border:0!important;padding:0!important;font-size:15px!important}#missas .mass-meta b{font-size:16px!important}}
 
+/* prayer-activity-and-pix-ui */
 .modal.prayer-modal-wide{width:min(1000px,100%);max-height:92vh}
 .prayer-modal-layout{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(270px,.88fr);gap:24px;align-items:start}
 .prayer-main-panel{min-width:0}
@@ -472,6 +478,7 @@ h1,h2{font-family:"Cormorant Garamond",Georgia,serif;line-height:1.08;letter-spa
  .prayer-activity-list{max-height:210px}
 }
 
+/* fixed-homepage-hero */
 #inicio.hero{position:relative;isolation:isolate;overflow:hidden;background:#4a1027!important;background-image:none!important;min-height:500px}
 #inicio .hero-fixed-art{position:absolute;inset:0;z-index:0;background-size:cover;background-position:center center;background-repeat:no-repeat}
 #inicio .hero-fixed-art::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(57,8,29,.24) 0%,rgba(57,8,29,.10) 42%,rgba(57,8,29,0) 68%)}
@@ -491,6 +498,7 @@ h1,h2{font-family:"Cormorant Garamond",Georgia,serif;line-height:1.08;letter-spa
  #inicio .hero-copy{max-width:100%}
 }
 
+/* prayer-popup-cleanup */
 #modalContent .prayer-modal-layout{grid-template-columns:minmax(0,1.08fr) minmax(290px,.92fr);gap:28px}
 #modalContent .prayer-form-feedback{min-height:22px;margin:12px 0 0;color:var(--wine);font-size:13px}
 #modalContent .prayer-main-panel{padding-right:4px}
@@ -504,6 +512,7 @@ h1,h2{font-family:"Cormorant Garamond",Georgia,serif;line-height:1.08;letter-spa
  #modalContent .prayer-main-panel{padding-right:0}
 }
 
+/* mass-schedule-final-refinement */
 #missas .mass-inner{justify-content:flex-start!important;gap:48px!important}
 #missas .mass-left{flex:1 1 auto!important;max-width:calc(100% - 270px);gap:24px!important}
 #missas .mass-meta{flex:0 1 900px!important;justify-content:flex-start!important;gap:38px!important;margin-left:0!important}
@@ -524,6 +533,7 @@ h1,h2{font-family:"Cormorant Garamond",Georgia,serif;line-height:1.08;letter-spa
  #missas .mass-meta b{font-weight:500!important}
 }
 
+/* latest-interface-polish */
 /* Faixa fina de horários, imediatamente abaixo do menu */
 #missas.mass-ribbon{position:relative;z-index:48;background:#f7f0e9;border-top:1px solid rgba(112,35,55,.10);border-bottom:1px solid rgba(112,35,55,.12);padding:8px 0;color:#642033;font-size:13px;line-height:1.35}
 .mass-ribbon-inner{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap}
@@ -540,6 +550,14 @@ h1,h2{font-family:"Cormorant Garamond",Georgia,serif;line-height:1.08;letter-spa
 #inicio .hero-quote{display:inline-flex!important;flex-direction:column;gap:0;white-space:normal}
 #inicio .hero-quote span{display:block;white-space:nowrap}
 #inicio .hero-copy h1{line-height:1.12}
+/* Brilho cálido e sutil passando pela região do santo */
+#inicio .hero-fixed-art{overflow:hidden}
+#inicio .hero-fixed-art::before{content:"";position:absolute;inset:0;pointer-events:none;z-index:1;opacity:0;background:
+  radial-gradient(ellipse 18% 48% at 76% 46%,rgba(255,232,166,.38) 0%,rgba(255,218,135,.16) 34%,transparent 75%),
+  linear-gradient(112deg,transparent 58%,rgba(255,237,190,.18) 67%,transparent 76%);
+  mix-blend-mode:screen;animation:saintSoftShine 8s ease-in-out infinite}
+@keyframes saintSoftShine{0%,58%,100%{opacity:0;transform:translateX(-3%)}68%{opacity:.60;transform:translateX(0)}80%{opacity:.20;transform:translateX(3%)}}
+@media(prefers-reduced-motion:reduce){#inicio .hero-fixed-art::before{animation:none;opacity:.10}}
 /* Pop-ups de oração: campos e painel lateral alinhados em dois eixos */
 #modalContent .prayer-modal-layout{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(290px,.95fr);gap:28px;align-items:start}
 #modalContent .prayer-main-panel{display:flex;flex-direction:column;align-items:stretch;min-width:0}
@@ -561,6 +579,7 @@ h1,h2{font-family:"Cormorant Garamond",Georgia,serif;line-height:1.08;letter-spa
 .whatsapp-float:hover{transform:translateY(-3px) scale(1.05);box-shadow:0 10px 28px rgba(0,0,0,.28)}
 .whatsapp-float svg{width:32px;height:32px;display:block;fill:currentColor}
 
+/* modal-top-alignment-mass-ribbon-and-content-polish */
 /* Modal de oração: as duas colunas começam rigorosamente no mesmo topo */
 .modal:has(#modalContent .prayer-modal-layout){position:relative}
 .modal:has(#modalContent .prayer-modal-layout) .modal-close{position:absolute;top:14px;right:14px;float:none}
@@ -580,6 +599,7 @@ h1,h2{font-family:"Cormorant Garamond",Georgia,serif;line-height:1.08;letter-spa
 #missas .mass-ribbon-inner strong{font-weight:650!important}
 @media(max-width:600px){#missas.mass-ribbon{font-size:13px!important}}
 
+/* materials-three-at-a-time-carousel */
 .materials-list{min-height:166px;overflow:hidden;transition:opacity .18s ease,transform .18s ease}
 .materials-list.materials-exiting{opacity:0;transform:translateY(-14px)}
 .materials-list.materials-entering{opacity:0;transform:translateY(14px)}
@@ -592,6 +612,7 @@ h1,h2{font-family:"Cormorant Garamond",Georgia,serif;line-height:1.08;letter-spa
 .materials-card .materials-note{margin-top:10px;padding-top:0}
 @media(prefers-reduced-motion:reduce){.materials-list{transition:none}}
 
+/* parish-experience-visual-system */
 /* Header compacto e indicador contínuo de leitura */
 header.topbar{transition:box-shadow .25s ease,background .25s ease}
 header.topbar.is-scrolled{box-shadow:0 7px 24px rgba(42,16,30,.10);background:rgba(255,253,250,.985)}
@@ -735,6 +756,7 @@ button:active,.btn:active,.btn-small:active,.nav-action:active,.interaction-pres
 .materials-card .materials-carousel-controls{margin-top:9px}
 .materials-card .materials-note{display:none!important}
 
+/* pastoral-coordinator-bottom-layout */
 .pastoral-coordination-bottom{display:block;margin-top:24px;padding-top:18px;border-top:1px solid var(--line)}
 .pastoral-coordinator-profile-bottom{display:flex;align-items:center;gap:16px;margin:0;padding:0;background:transparent;border:0}
 .pastoral-coordinator-profile-bottom .coordinator-photo-upload{flex:0 0 78px;width:78px}
@@ -742,6 +764,7 @@ button:active,.btn:active,.btn-small:active,.nav-action:active,.interaction-pres
 .pastoral-coordinator-profile-bottom .coordinator-name-block{gap:3px}
 .pastoral-coordinator-profile-bottom .coordinator-phone{font-size:13px;color:var(--muted);margin-top:2px}
 
+/* community-modal-order-and-coordinator */
 .community-facts-section{padding-top:15px}
 .community-details-grid{margin-top:10px}
 .community-details-grid .info-box{min-width:0}
@@ -765,6 +788,7 @@ button:active,.btn:active,.btn-small:active,.nav-action:active,.interaction-pres
   .community-coordinator-card{align-items:center;padding:12px}
 }
 
+/* pastoral-modal-reference-layout */
 /* Layout dos pop-ups das pastorais conforme a referência enviada */
 .pastoral-modal-reference-layout{padding:4px 2px 8px}
 .pastoral-modal-reference-layout .pastoral-modal-intro{margin-bottom:22px}
@@ -787,6 +811,7 @@ button:active,.btn:active,.btn-small:active,.nav-action:active,.interaction-pres
   .pastoral-coordinator-info-card{min-height:62px;padding:11px 12px}
 }
 
+/* requested-site-refinements */
 /* Navegação e identificação da cidade */
 .navlinks{font-size:16px!important;gap:17px!important}
 #inicio .eyebrow{font-size:13px!important;letter-spacing:.14em}
@@ -833,6 +858,7 @@ button:active,.btn:active,.btn-small:active,.nav-action:active,.interaction-pres
 .rosary-audio-stop{border:1px solid #e4d7d6;border-radius:999px;background:transparent;color:#766a70;font-weight:700;font-size:12px;padding:10px 14px;cursor:pointer}
 @media(max-width:520px){.rosary-audio-controls>*{flex:1;justify-content:center}}
 
+/* contact-message-button-position */
 #contato .contact-form-inline .message-field{grid-column:1!important}
 #contato .contact-form-inline button[type="submit"]{
   grid-column:2!important;grid-row:2!important;
@@ -848,6 +874,7 @@ button:active,.btn:active,.btn-small:active,.nav-action:active,.interaction-pres
   }
 }
 
+/* final-banner-team-contact-refinements */
 /* Banner: CTAs principais em destaque e ações complementares discretas */
 #inicio .hero-actions{display:flex!important;flex-direction:column!important;align-items:flex-start!important;gap:13px!important}
 #inicio .hero-primary-actions{display:flex!important;flex-wrap:wrap!important;align-items:center!important;gap:12px!important}
@@ -888,6 +915,7 @@ button:active,.btn:active,.btn-small:active,.nav-action:active,.interaction-pres
   #contato #parishContactForm button[type="submit"]{grid-column:1!important;justify-self:stretch!important;width:100%}
 }
 
+/* news-three-cards-and-polished-buttons */
 @media(min-width:1000px){#newsGrid .news-card{flex-basis:calc((100% - 36px)/3)!important}}
 @media(min-width:651px) and (max-width:999px){#newsGrid .news-card{flex-basis:calc((100% - 18px)/2)!important}}
 @media(max-width:650px){#newsGrid .news-card{flex-basis:100%!important}}
@@ -926,10 +954,13 @@ button:active,.btn:active,.btn-small:active,.nav-action:active,.interaction-pres
  .tithe-community-field,.tithe-community-select,.tithe-interest-form button{grid-column:1}
 }
 
+/* caminho-community-card-readability */
 .community-photo[aria-label*="O Caminho"]{background-position:center!important;background-size:cover!important}
 
+/* final-widget-position-and-button-reset */
 header .nav-action{font:inherit;font-weight:800;cursor:pointer}
 
+/* radio-mini-player-inline-style */
 #missas.mass-ribbon{overflow:visible!important}
 #missas .mass-ribbon-inner{position:relative!important;padding-right:58px!important}
 .radio-mini-widget{position:absolute;right:30px;top:50%;transform:translateY(-50%);z-index:8;display:flex;flex-direction:row-reverse;align-items:center;justify-content:flex-end}
@@ -953,10 +984,12 @@ header .nav-action{font:inherit;font-weight:800;cursor:pointer}
   .radio-mini-title{font-size:10px}
 }
 
+/* remove-contact-decorative-icons */
 #contato .contact-item{padding-left:0!important}
 #contato .contact-item:before,
 #contato .contact-item::before{display:none!important;content:none!important;background:none!important}
 
+/* sacrament-relevant-image-style */
 .sacrament-image{position:relative!important;overflow:hidden!important;background:#4b2635!important;isolation:isolate}
 .sacrament-image .sacrament-photo{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;display:block!important;object-fit:cover!important;object-position:center 42%!important;z-index:0!important}
 .sacrament-image:before{content:""!important;position:absolute!important;inset:0!important;background:linear-gradient(0deg,rgba(35,14,24,.74),rgba(35,14,24,.02) 70%)!important;z-index:1!important}
@@ -967,6 +1000,7 @@ header .nav-action{font:inherit;font-weight:800;cursor:pointer}
 .sacrament-contact:hover{background:#802036!important;color:#fff!important}
 @media(max-width:680px){.sacrament-image span{font-size:20px;left:16px!important;bottom:15px!important}}
 
+/* secretary-whatsapp-modal-and-form-style */
 .secretary-whatsapp-modal{max-width:680px;margin:0 auto}
 .secretary-whatsapp-modal h2{margin:5px 0 8px}
 .secretary-modal-intro{font-size:14px;line-height:1.6;color:#71635f;margin:0 0 18px}
@@ -988,6 +1022,7 @@ header .nav-action{font:inherit;font-weight:800;cursor:pointer}
  #parishContactForm button[type="submit"]{grid-column:1!important;justify-self:stretch!important}
 }
 
+/* radio-native-player-style */
 #missas{position:relative!important;z-index:70!important;overflow:visible!important}
 #missas .mass-ribbon-inner{position:relative!important;padding-right:0!important;overflow:visible!important}
 .radio-mini-widget{position:absolute!important;right:0;top:50%;transform:translateY(-50%);z-index:100!important;display:flex;align-items:center;justify-content:flex-end;overflow:visible!important}
@@ -1022,10 +1057,12 @@ header .nav-action{font:inherit;font-weight:800;cursor:pointer}
  .radio-native-volume input{width:72px}
 }
 
+/* secretary-float-button-reset */
 button.whatsapp-float{padding:0;cursor:pointer;appearance:none;-webkit-appearance:none}
 .contact-whatsapp-inline{background:transparent!important;border:0!important;padding:0!important;font:inherit!important;cursor:pointer!important}
 .contact-whatsapp-inline:hover{text-decoration-thickness:2px!important}
 
+/* prayer-24h-contribution-flow-style */
 .prayer-contribution-panel,.prayer-confirmed-panel{min-width:0}
 .prayer-contribution-kicker{display:block;margin:0 0 8px;color:#ad833d;font-size:10px;font-weight:850;letter-spacing:.14em;text-transform:uppercase}
 .prayer-contribution-panel h2,.prayer-confirmed-panel h2{margin:0 0 10px}
@@ -1052,6 +1089,7 @@ button.whatsapp-float{padding:0;cursor:pointer;appearance:none;-webkit-appearanc
  .prayer-donation-qr{width:140px;height:140px}
 }
 
+/* daily-liturgy-ribbon-style */
 /* Faixa de Liturgia Diária, com as mesmas proporções visuais da faixa de missas */
 #liturgiaDiariaRibbon.daily-ribbon{
   position:relative;z-index:6;margin-top:-50px;background:#f7f0e9;color:#642033;
@@ -1097,10 +1135,12 @@ button.whatsapp-float{padding:0;cursor:pointer;appearance:none;-webkit-appearanc
   .daily-ribbon-saint-button{white-space:normal;text-align:right;font-size:11px;padding:6px 10px}
 }
 
+/* saint-modal-portrait-style */
 .saint-modal-portrait-wrap{width:100%;max-width:250px;margin:0 auto 18px;border-radius:18px;overflow:hidden;background:#f3e8dc;box-shadow:0 12px 28px rgba(52,16,31,.14)}
 .saint-modal-portrait{display:block;width:100%;aspect-ratio:1/1;object-fit:cover;object-position:center 28%}
 @media(max-width:600px){.saint-modal-portrait-wrap{max-width:210px}}
 
+/* radio-station-selector-style */
 .radio-native-panel{min-width:290px;max-width:min(430px,calc(100vw - 34px));white-space:normal;flex-wrap:wrap;gap:9px;padding:12px!important;align-items:flex-start!important}
 .radio-native-station{display:flex;flex:1 1 100%;min-width:0;flex-direction:column;gap:4px}
 .radio-native-station strong{font-size:13px;line-height:1.3}
@@ -1111,6 +1151,7 @@ button.whatsapp-float{padding:0;cursor:pointer;appearance:none;-webkit-appearanc
 .radio-native-controls{width:100%;justify-content:flex-start!important}
 @media(max-width:860px){.radio-native-panel{max-width:min(360px,calc(100vw - 24px))}}
 
+/* integrated-liturgy-styles */
 #liturgiaPageView{--wine:#571c34;--wine2:#742d49;--gold:#caa45c;--cream:#f8f3ed;--paper:#fffdfa;--ink:#30242a;--muted:#766a70;--line:#e9dfe2;--shadow:0 14px 40px rgba(54,20,36,.09)}
 #liturgiaPageView *{box-sizing:border-box}
 #liturgiaPageView{scroll-behavior:smooth}
@@ -1188,6 +1229,7 @@ button.whatsapp-float{padding:0;cursor:pointer;appearance:none;-webkit-appearanc
 #liturgiaPageView .saint-dialog{z-index:100500;}
 @media(max-width:850px){#liturgiaPageView .main-grid{padding:26px 16px 40px;}}
 
+/* liturgy-accessibility-and-news-share-style */
 /* Liturgia: cabeçalho compacto e grade alinhada ao topo */
 #liturgiaPageView > .hero{
   min-height:0!important;height:auto!important;display:block!important;
@@ -1244,6 +1286,7 @@ button.whatsapp-float{padding:0;cursor:pointer;appearance:none;-webkit-appearanc
  #liturgiaPageView .reading-size-value{align-self:center}
 }
 
+/* liturgia-final-alignment-fix */
 /* Cabeçalho da Liturgia: centralização consistente de todas as linhas */
 #liturgiaPageView > .hero .hero-inner{
   display:flex!important;
@@ -1320,6 +1363,7 @@ button.whatsapp-float{padding:0;cursor:pointer;appearance:none;-webkit-appearanc
   overflow-wrap:anywhere;
 }
 
+/* moment-gallery-viewer-style */
 .moment-gallery-viewer{position:fixed;inset:0;z-index:99999;background:rgba(8,8,12,.94);display:none;align-items:center;justify-content:center;padding:5vh 5vw}
 .moment-gallery-viewer.is-open{display:flex}
 .moment-gallery-viewer figure{margin:0;max-width:90vw;max-height:90vh;display:flex;flex-direction:column;align-items:center;gap:12px}
@@ -1329,6 +1373,7 @@ button.whatsapp-float{padding:0;cursor:pointer;appearance:none;-webkit-appearanc
 .moment-gallery-close{right:22px;top:20px}.moment-gallery-prev{left:20px;top:50%;transform:translateY(-50%)}.moment-gallery-next{right:20px;top:50%;transform:translateY(-50%)}
 @media(max-width:600px){.moment-gallery-viewer{padding:3vh 3vw}.moment-gallery-viewer figure img{max-width:94vw;max-height:78vh}.moment-gallery-viewer button{width:40px;height:40px;font-size:22px}.moment-gallery-prev{left:8px}.moment-gallery-next{right:8px}.moment-gallery-close{right:10px;top:10px}}
 
+/* section-copy-and-reading-audio-refinements */
 /* Textos de apresentação compactos: uma linha em telas amplas, quebra natural no celular. */
 .sacraments-heading p,#reze .section-head p{
   max-width:none!important;width:100%;white-space:nowrap;line-height:1.4;
