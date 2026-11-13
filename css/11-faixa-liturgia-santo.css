@@ -1,0 +1,66 @@
+/* ============================================================
+   11-faixa-liturgia-santo.css
+   Faixa de liturgia/santo do dia e seletor de rádio
+   ============================================================ */
+
+/* ---- Faixa de liturgia diária e santo do dia  [bloco original: #daily-liturgy-ribbon-style] ---- */
+/* Faixa de Liturgia Diária, com as mesmas proporções visuais da faixa de missas */
+#liturgiaDiariaRibbon.daily-ribbon{
+  position:relative;z-index:6;margin-top:-50px;background:#f7f0e9;color:#642033;
+  border-top:1px solid rgba(112,35,55,.10);border-bottom:1px solid rgba(112,35,55,.12);
+  padding:8px 0;font-size:13px;line-height:1.35;
+  box-shadow:0 7px 18px rgba(48,17,29,.08);
+}
+.daily-ribbon-inner{display:flex;align-items:center;justify-content:center;gap:25px;min-height:35px}
+.daily-ribbon-gospel,.daily-ribbon-saint{display:flex;align-items:center;gap:11px;min-width:0}
+.daily-ribbon-kicker{font-size:11px;font-weight:800;letter-spacing:.045em;text-transform:uppercase;color:#8a3a50;white-space:nowrap}
+.daily-ribbon-quote{font-size:13px;color:#5f2638;white-space:nowrap}
+.daily-ribbon-quote small{font-size:11px;color:#8b747b;margin-left:4px}
+/* Ações neutras por padrão; o vinho aparece apenas na interação. */
+.daily-ribbon-access,.daily-ribbon-saint-button{
+  display:inline-flex;align-items:center;justify-content:center;gap:6px;
+  color:#75676b;background:#fff;border:1px solid #e8dfe0;border-radius:999px;
+  padding:6px 13px;font-family:inherit;font-size:11px;font-weight:750;line-height:1.2;text-decoration:none;white-space:nowrap;
+  cursor:pointer;transition:color .2s ease,background .2s ease,border-color .2s ease,transform .2s ease;
+}
+.daily-ribbon-access:hover,.daily-ribbon-saint-button:hover{color:#fff;background:#64233b;border-color:#64233b;transform:translateY(-1px)}
+.daily-ribbon-access:focus-visible,.daily-ribbon-saint-button:focus-visible{outline:2px solid #caa45c;outline-offset:3px}
+.daily-ribbon-divider{width:1px;height:25px;background:rgba(126,58,75,.25);flex:0 0 1px}
+.daily-ribbon-saint-button{font-size:12px}
+.daily-ribbon-saint-button span{font-size:10px;opacity:.72}
+.saint-modal-kicker{display:inline-block;color:#b28a3b;font-size:11px;font-weight:850;letter-spacing:.13em;text-transform:uppercase;margin:1px 0 8px}
+.saint-modal h2{font:700 clamp(27px,4vw,36px)/1.12 Georgia,serif;color:#542037;margin:0 0 8px}
+.saint-modal-subtitle{font-size:13px!important;color:#9a7a56!important;font-weight:750;margin:0 0 18px}
+.saint-modal p{font-size:14px;line-height:1.75;color:#655750;margin:0 0 13px}
+.saint-modal h3{font-size:15px;line-height:1.3;color:#801f3a;font-weight:850;margin:19px 0 8px}
+.saint-modal-note{margin-top:17px;padding:14px 16px;background:#f8f1e9;border-left:3px solid #c9a45f;border-radius:0 10px 10px 0;color:#655750;font-size:13px;line-height:1.6}
+.saint-modal-source{display:inline-block;margin-top:16px;color:#7b263e;font-size:12px;font-weight:750;text-decoration:none}
+.saint-modal-source:hover{text-decoration:underline;text-underline-offset:3px}
+@media(max-width:900px){.daily-ribbon-inner{gap:15px}.daily-ribbon-gospel,.daily-ribbon-saint{gap:8px}.daily-ribbon-quote{font-size:12px}.daily-ribbon-saint-button{font-size:11px}}
+@media(max-width:650px){
+  #liturgiaDiariaRibbon.daily-ribbon{margin-top:-34px;padding:10px 0}
+  .daily-ribbon-inner{flex-direction:column;align-items:flex-start;gap:8px}
+  .daily-ribbon-gospel{width:100%;flex-wrap:wrap;gap:5px 9px}
+  .daily-ribbon-kicker{font-size:10px}
+  .daily-ribbon-quote{white-space:normal;flex:1 1 100%;font-size:12px}
+  .daily-ribbon-access{margin-left:auto;padding:5px 11px}
+  .daily-ribbon-divider{width:100%;height:1px;flex-basis:1px}
+  .daily-ribbon-saint{width:100%;justify-content:space-between;flex-wrap:wrap}
+  .daily-ribbon-saint-button{white-space:normal;text-align:right;font-size:11px;padding:6px 10px}
+}
+
+/* ---- Modal do santo: retrato  [bloco original: #saint-modal-portrait-style] ---- */
+.saint-modal-portrait-wrap{width:100%;max-width:250px;margin:0 auto 18px;border-radius:18px;overflow:hidden;background:#f3e8dc;box-shadow:0 12px 28px rgba(52,16,31,.14)}
+.saint-modal-portrait{display:block;width:100%;aspect-ratio:1/1;object-fit:cover;object-position:center 28%}
+@media(max-width:600px){.saint-modal-portrait-wrap{max-width:210px}}
+
+/* ---- Rádio: seletor de emissoras  [bloco original: #radio-station-selector-style] ---- */
+.radio-native-panel{min-width:290px;max-width:min(430px,calc(100vw - 34px));white-space:normal;flex-wrap:wrap;gap:9px;padding:12px!important;align-items:flex-start!important}
+.radio-native-station{display:flex;flex:1 1 100%;min-width:0;flex-direction:column;gap:4px}
+.radio-native-station strong{font-size:13px;line-height:1.3}
+.radio-native-select{width:100%;max-width:100%;padding:8px 10px;border:1px solid #e5d9d6;border-radius:9px;background:#fffdfa;color:#5b2638;font-family:inherit;font-weight:600;font-size:11px;outline:none}
+.radio-native-select:focus{border-color:#b38b58;box-shadow:0 0 0 2px rgba(202,164,92,.18)}
+.radio-native-official-link{font-size:10px;font-weight:800;color:#7a344f;text-decoration:underline;text-underline-offset:2px}
+.radio-native-official-link[hidden]{display:none!important}
+.radio-native-controls{width:100%;justify-content:flex-start!important}
+@media(max-width:860px){.radio-native-panel{max-width:min(360px,calc(100vw - 24px))}}

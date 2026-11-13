@@ -1383,6 +1383,13 @@ button.whatsapp-float{padding:0;cursor:pointer;appearance:none;-webkit-appearanc
   border-top:1px solid #f0e7e8;
 }
 #liturgiaPageView .reading-audio-controls .tool-btn{min-height:33px;padding:7px 11px;font-size:11px}
+
+#equipe .person img[src$="padre-victor-almeida.webp"]{
+  object-fit:cover!important;object-position:center 8%!important
+}
+.profile-modal-complete>img[src$="padre-victor-almeida.webp"]{
+  object-fit:cover;object-position:center top
+}
 #liturgiaPageView .reading-audio-controls .tool-btn:disabled{opacity:.42;cursor:not-allowed;background:#faf8f7;color:#9a8c90}
 #liturgiaPageView .reading-audio-status{flex:1 1 100%;font-size:11px;color:#89787e;min-height:14px}
 @media(max-width:760px){
