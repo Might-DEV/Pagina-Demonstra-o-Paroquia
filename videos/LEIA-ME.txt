@@ -1,0 +1,5 @@
+Coloque aqui o arquivo do vídeo institucional:
+
+    video_institucional_demonstrativo.mp4
+
+O site já aponta para videos/video_institucional_demonstrativo.mp4 (pop-up "Conheça a história da nossa paróquia").

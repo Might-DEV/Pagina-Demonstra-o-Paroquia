@@ -1,66 +1,50 @@
 <!DOCTYPE html>
+
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#571c34">
-  <meta name="description" content="Conheça a Paróquia São Paulo Apóstolo, em Ferraz de Vasconcelos: comunidades, pastorais, celebrações e momentos de oração.">
+  <!-- Codificação de caracteres (acentos) -->
+  <meta charset="utf-8"/>
+  <!-- Faz o site se ajustar à largura da tela (celular, tablet, computador) -->
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <!-- Cor da barra do navegador no celular -->
+  <meta content="#571c34" name="theme-color"/>
+  <!-- Descrição que aparece nos resultados de busca (Google) -->
+  <meta content="Conheça a Paróquia São Paulo Apóstolo, em Ferraz de Vasconcelos: comunidades, pastorais, celebrações e momentos de oração." name="description"/>
+  <!-- Título da aba do navegador -->
   <title>Paróquia São Paulo Apóstolo | Ferraz de Vasconcelos</title>
-  <link rel="icon" href="assets/img/logo-da-paroquia.png">
-
-  <!-- ESTILOS: a ORDEM importa (os arquivos mais abaixo sobrescrevem os de cima).
-       Não reordene sem testar o visual. -->
-  <link rel="stylesheet" href="css/01-base.css">
-  <link rel="stylesheet" href="css/02-cabecalho-botoes.css">
-  <link rel="stylesheet" href="css/03-hero-faixa-missas.css">
-  <link rel="stylesheet" href="css/04-secoes-cards-rodape.css">
-  <link rel="stylesheet" href="css/05-modais-oracao.css">
-  <link rel="stylesheet" href="css/06-refinamentos-secoes.css">
-  <link rel="stylesheet" href="css/07-galeria-oracao-hero.css">
-  <link rel="stylesheet" href="css/08-sistema-visual-pastorais.css">
-  <link rel="stylesheet" href="css/09-contato-banner-noticias.css">
-  <link rel="stylesheet" href="css/10-widgets-radio-secretaria.css">
-  <link rel="stylesheet" href="css/11-faixa-liturgia-santo.css">
-  <link rel="stylesheet" href="css/12-galeria-visualizador.css">
-  <link rel="stylesheet" href="css/13-pagina-liturgia.css">
-  <link rel="stylesheet" href="css/14-ajustes-finais.css">
+  <!-- Todos os estilos do site (cores, layout, animações) -->
+  <link rel="stylesheet" href="css/style.css">
 </head>
+<!-- CORPO DA PÁGINA: tudo o que aparece na tela. -->
 <body>
-
-<!-- ==================================================================
-  CABEÇALHO FIXO: marca, menu de navegação, botão "Seja Dizimista",
-  faixa de horários das missas (com mini-player de rádio) e barra
-  de progresso de leitura. Comportamento em js/09-ux.js e js/10-radio.js
-==================================================================  -->
+<!-- CABEÇALHO FIXO: logo, menu de navegação, faixa de missas e rádio. -->
 <header class="topbar">
+<!-- Linha do menu: logo, botão do menu (celular), links e botão "Seja Dizimista". -->
 <div class="container nav">
 <a aria-label="Paróquia São Paulo Apóstolo - início" class="brand" href="#inicio">
-<img alt="Logo da Paróquia" src="assets/img/logo-da-paroquia.png"/>
+<img alt="Logo da Paróquia" src="imgs/logo/logo-paroquia.png"/>
 <span>Paróquia<br/>São Paulo Apóstolo</span>
 </a>
 <button aria-expanded="false" aria-label="Abrir menu" class="menu-toggle" id="menuToggle">☰</button>
-
-<!-- Menu principal. Os links "#id" rolam até as seções; "#liturgia" abre a página de Liturgia (js/11-liturgia-navegacao.js) -->
+<!-- Links do menu: levam às seções da página (#inicio, #comunidades, ...). -->
 <nav aria-label="Navegação principal" class="navlinks" id="navLinks"><a href="#inicio">Paróquia</a><a href="#comunidades">Comunidades</a><a href="#sacramentos">Sacramentos</a><a href="#pastorais">Pastorais</a><a href="#liturgia">Liturgia</a><a href="#noticias">Notícias</a><a href="#contato">Contato</a></nav>
 <button class="nav-action" data-open="dizimo" type="button"><span aria-hidden="true" class="tithe-heart">♡</span> Seja Dizimista</button>
 </div>
-
-<!-- Faixa de horários das missas. O texto dos horários é editado aqui (e também em js/01-data.js e na seção Contato) -->
+<!-- FAIXA DE MISSAS: horários das celebrações e mini player de rádio. -->
 <div aria-label="Horários das celebrações" class="mass-ribbon" id="missas">
 <div class="container mass-ribbon-inner">
 <span><strong>Missas na Matriz:</strong> Domingos · 7h, 10h30 e 19h30</span>
 <span aria-hidden="true" class="mass-ribbon-divider">|</span>
 <span><strong>Missa de Adoração:</strong> Quinta-feira · 19h30</span>
-
-<!-- Mini-player de rádio católica: lista de emissoras e lógica em js/10-radio.js -->
+<!-- RÁDIO CATÓLICA: botão que abre o painel com emissoras, play/pause e volume (controlado por js/script.js). -->
 <div class="radio-mini-widget" id="radioMiniWidget">
 <button aria-controls="radioNativeExpansion" aria-expanded="false" aria-label="Abrir rádio católica" class="radio-mini-toggle" id="radioMiniToggle" title="Ouvir rádio católica" type="button">
-<svg aria-hidden="true" focusable="false" viewBox="0 0 24 24">
+<svg aria-hidden="true" focusable="false" viewbox="0 0 24 24">
 <rect height="13" rx="2" width="18" x="3" y="7"></rect>
 <path d="M7 7 18 3M7 11h4M7 15h.01M15 12a3 3 0 0 1 0 4"></path>
 </svg>
 </button>
-<div aria-label="Player de rádio católica" class="radio-native-expansion" hidden id="radioNativeExpansion" role="dialog">
+<div aria-label="Player de rádio católica" class="radio-native-expansion" hidden="" id="radioNativeExpansion" role="dialog">
 <div class="radio-native-panel">
 <div class="radio-native-station">
 <span class="radio-native-kicker">Rádio católica ao vivo</span>
@@ -68,13 +52,13 @@
 <small aria-live="polite" id="radioNativeStatus">Selecione uma emissora</small>
 <select aria-label="Selecionar emissora" class="radio-native-select" id="radioNativeStationSelect">
 <option value="0">Rádio Aparecida · 104.3 FM</option>
-<option selected value="1">Rádio Canção Nova · 89.1 FM</option>
+<option selected="" value="1">Rádio Canção Nova · 89.1 FM</option>
 <option value="2">Rádio 9 de Julho · São Paulo</option>
 <option value="3">Rádio Evangelizar · 99.5 FM / 1060 AM</option>
 <option value="4">FM Dom Bosco · 96.1 FM</option>
 <option value="5">Rádio Colméia · 98.7 FM</option>
 </select>
-<a class="radio-native-official-link" hidden href="https://radio.cancaonova.com/radio/cachoeira-paulista/" id="radioNativeOfficialLink" rel="noopener" target="_blank">Abrir transmissão ↗</a>
+<a class="radio-native-official-link" hidden="" href="https://radio.cancaonova.com/radio/cachoeira-paulista/" id="radioNativeOfficialLink" rel="noopener" target="_blank">Abrir transmissão ↗</a>
 </div>
 <div aria-label="Controles de áudio" class="radio-native-controls" role="group">
 <button aria-label="Reproduzir" class="radio-native-button" id="radioNativePlay" title="Play" type="button">▶</button>
@@ -91,20 +75,15 @@
 </div>
 </div>
 </div>
-
-<!-- Barra de progresso de leitura da página (preenchida em js/09-ux.js) -->
+<!-- Barra de progresso de leitura (cresce conforme a página é rolada). -->
 <div aria-hidden="true" class="reading-progress-track"><span id="readingProgressBar"></span></div>
 </header>
-
-<!-- ==================================================================
-  CONTEÚDO PRINCIPAL DA PÁGINA INICIAL
-  (some quando a página de Liturgia é aberta)
-==================================================================  -->
+<!-- CONTEÚDO PRINCIPAL: todas as seções da página inicial. -->
 <main id="siteMain">
-
-<!-- SEÇÃO HERO (banner de abertura). A imagem de fundo (hero-banner) é aplicada inline abaixo; textos e botões editáveis aqui -->
+<!-- SEÇÃO INÍCIO (banner): frase de destaque, botões e imagem do santo. -->
 <section class="hero" id="inicio">
-<div aria-hidden="true" class="hero-fixed-art" style="background-image:url(assets/img/hero-banner.jpg)"></div>
+<!-- Imagem do santo do banner (fica ao fundo, com a aura pulsando). -->
+<div aria-hidden="true" class="hero-fixed-art" style="background-image:url(imgs/hero/hero-santo.jpg)"></div>
 <div class="hero-content"><div class="hero-copy">
 <span class="eyebrow">Ferraz de Vasconcelos - São Paulo.</span>
 <h1><span class="hero-quote"><span>“Tudo posso naquele</span><span>que me fortalece.”</span></span></h1>
@@ -122,34 +101,31 @@
 </div>
 </div></div>
 </section>
-
-<!-- FAIXA "Liturgia + Santo do dia". ATENÇÃO: texto do Evangelho e do santo é FIXO (editar manualmente a cada dia ou ligar à API) -->
+<!-- FAIXA DA LITURGIA: trecho do evangelho do dia e botão com o santo do dia. -->
 <section aria-label="Liturgia diária e santo do dia" class="daily-ribbon" id="liturgiaDiariaRibbon">
 <div class="container daily-ribbon-inner">
 <div class="daily-ribbon-gospel">
 <span class="daily-ribbon-kicker">Liturgia</span>
-<span class="daily-ribbon-quote">“O Reino de Deus está entre vós.” <small>Lc 17,20-25</small></span>
+<span class="daily-ribbon-quote">“Quem procurar salvar a sua vida a perderá; e quem a perder a conservará viva.” <small>Lc 17,33</small></span>
 <a aria-label="Acessar o calendário de Liturgia da paróquia" class="daily-ribbon-access" href="#liturgia" title="Abrir Liturgia">Ver calendário<span aria-hidden="true">↗</span></a>
 </div>
 <span aria-hidden="true" class="daily-ribbon-divider"></span>
 <div class="daily-ribbon-saint">
 <span class="daily-ribbon-kicker">Santo do dia</span>
-<button aria-haspopup="dialog" aria-label="Conheça a história de São Josafá, bispo e mártir" class="daily-ribbon-saint-button" data-saint-story="" type="button">São Josafá, bispo e mártir <span aria-hidden="true">↗</span></button>
+<button aria-haspopup="dialog" aria-label="Conheça a história de São Nicolau I" class="daily-ribbon-saint-button" data-saint-story="" type="button">São Nicolau I, papa <span aria-hidden="true">↗</span></button>
 </div>
 </div>
 </section>
-
-<!-- Indicador "role para conhecer a paróquia" (some ao rolar, ver CSS) -->
+<!-- Indicador "Role para conhecer a paróquia". -->
 <div class="hero-scroll-cue" id="heroScrollCue">
 <a aria-label="Role a página para conhecer a paróquia" href="#historia">
 <span>Role para conhecer a paróquia</span>
-<svg aria-hidden="true" focusable="false" viewBox="0 0 24 24">
+<svg aria-hidden="true" focusable="false" viewbox="0 0 24 24">
 <path d="M12 4v15M5.5 12.5 12 19l6.5-6.5"></path>
 </svg>
 </a>
 </div>
-
-<!-- SEÇÃO HISTÓRIA: vídeo institucional (abre modal via data-open="video") e números da paróquia -->
+<!-- SEÇÃO HISTÓRIA: vídeo institucional, texto sobre a paróquia e números de destaque. -->
 <section id="historia"><div class="container story-grid">
 <button aria-label="Assistir ao vídeo da história da paróquia" class="story-photo video-thumb" data-open="video" type="button">
 <span class="video-play">▶</span><span class="video-caption">Conheça a história da nossa paróquia</span><span class="video-duration">VÍDEO INSTITUCIONAL</span>
@@ -157,34 +133,32 @@
 <div class="story-copy"><span class="kicker">Memória e fé</span><h2>Uma história de fé, comunidade e missão.</h2>
 <p>A Paróquia São Paulo Apóstolo é uma comunidade católica em Ferraz de Vasconcelos, chamada a anunciar o Evangelho, celebrar a fé e servir a todos com amor.</p>
 <p>Ao longo de sua caminhada, a paróquia cresce e se fortalece por meio de suas comunidades, pastorais, movimentos e de cada pessoa que participa dessa missão.</p>
+<!-- Números de destaque (comunidades, missão...). -->
 <div class="stats"><div class="stat"><b>8</b><span>comunidades</span></div><div class="stat"><b>1</b><span>missão</span></div><div class="stat"><b>∞</b><span>fé e esperança</span></div></div>
 </div>
 </div></section>
-
-<!-- SEÇÃO COMUNIDADES: os cards são gerados por js/03-secoes.js (renderCommunities) a partir de js/01-data.js -->
+<!-- SEÇÃO COMUNIDADES: os cards são criados pelo JavaScript (renderCommunities) dentro de #communityGrid. -->
 <section class="soft" id="comunidades"><div class="container">
 <div class="section-head"><span class="kicker">Uma só família</span><h2>Conheça nossas comunidades</h2><p>Oito comunidades, uma só fé. Conheça cada uma delas.</p></div>
 <div class="grid" id="communityGrid"></div>
 </div></section>
-
-<!-- SEÇÃO SACRAMENTOS: abas aqui; conteúdo de cada sacramento vem de js/01-data.js (sacramentData) -->
+<!-- SEÇÃO SACRAMENTOS: abas dos sete sacramentos; o conteúdo é desenhado pelo JavaScript em #sacramentFeature. -->
 <section class="sacraments-section" id="sacramentos"><div class="container">
 <div class="sacraments-heading"><span class="sacraments-kicker">Vida sacramental</span><h2>Sacramentos</h2>
 <p>Conheça os sete sacramentos e os caminhos da vida cristã.</p></div>
 <div aria-label="Escolha um sacramento" class="sacrament-tabs" role="tablist">
-<button aria-selected="true" class="sacrament-tab active" type="button" data-sacrament="0" role="tab">Batismo</button><button aria-selected="false" class="sacrament-tab" type="button" data-sacrament="1" role="tab">Eucaristia</button><button aria-selected="false" class="sacrament-tab" type="button" data-sacrament="2" role="tab">Confirmação</button><button aria-selected="false" class="sacrament-tab" type="button" data-sacrament="3" role="tab">Reconciliação</button><button aria-selected="false" class="sacrament-tab" type="button" data-sacrament="4" role="tab">Unção</button><button aria-selected="false" class="sacrament-tab" type="button" data-sacrament="5" role="tab">Matrimônio</button><button aria-selected="false" class="sacrament-tab" type="button" data-sacrament="6" role="tab">Ordem</button></div>
+<button aria-selected="true" class="sacrament-tab active" data-sacrament="0" role="tab">Batismo</button><button aria-selected="false" class="sacrament-tab" data-sacrament="1" role="tab">Eucaristia</button><button aria-selected="false" class="sacrament-tab" data-sacrament="2" role="tab">Confirmação</button><button aria-selected="false" class="sacrament-tab" data-sacrament="3" role="tab">Reconciliação</button><button aria-selected="false" class="sacrament-tab" data-sacrament="4" role="tab">Unção</button><button aria-selected="false" class="sacrament-tab" data-sacrament="5" role="tab">Matrimônio</button><button aria-selected="false" class="sacrament-tab" data-sacrament="6" role="tab">Ordem</button></div>
 <div aria-live="polite" class="sacrament-feature" id="sacramentFeature"></div><p class="sacrament-image-credit">Imagens: série <i>Os Sete Sacramentos</i>, de Nicolas Poussin (séc. XVII), obras em domínio público.</p></div></section>
-
-<!-- SEÇÃO PASTORAIS: cards gerados por js/03-secoes.js; formulário "Faça parte" envia para o WhatsApp (js/06-main.js) -->
+<!-- SEÇÃO PASTORAIS: cards criados pelo JavaScript e formulário "Faça parte da nossa missão" (envia para o WhatsApp). -->
 <section id="pastorais"><div class="container">
 <div class="section-head"><span class="kicker">Serviço e missão</span><h2>Nossas pastorais</h2><p>Há diferentes formas de participar e colocar seus dons a serviço da comunidade.</p></div>
 <div class="pastoral-grid" id="pastoralGrid"></div>
 <div class="join-box"><div><h3>Faça parte da nossa missão</h3><p>Quer participar de uma pastoral? Informe seus dados e a equipe receberá seu interesse pelo WhatsApp da secretaria.</p></div>
-<form class="form-grid" id="joinForm"><input name="nome" aria-label="Seu nome" autocomplete="name" placeholder="Seu nome" required><input name="telefone" aria-label="Telefone / WhatsApp" autocomplete="tel" placeholder="Telefone / WhatsApp" required type="tel"><select class="full" name="pastoral" aria-label="Pastoral de interesse" required><option value="">Selecione uma pastoral</option></select><textarea class="full" name="mensagem" aria-label="Mensagem" placeholder="Conte um pouco sobre seu interesse"></textarea><button class="btn full" type="submit">Enviar interesse</button></form>
+<!-- Formulário de interesse em participar de uma pastoral. -->
+<form class="form-grid" id="joinForm"><input name="nome" placeholder="Seu nome" required=""><input name="telefone" placeholder="Telefone / WhatsApp" required="" type="tel"/><select class="full" name="pastoral" required=""><option value="">Selecione uma pastoral</option></select><textarea class="full" name="mensagem" placeholder="Conte um pouco sobre seu interesse"></textarea><button class="btn full" type="submit">Enviar interesse</button></input></form>
 </div>
 </div></section>
-
-<!-- SEÇÃO "REZE CONOSCO": vela virtual, intenção de missa e terço (js/04-oracao.js) -->
+<!-- SEÇÃO REZE CONOSCO: abre os pop-ups de vela virtual, intenção de missa e terço. -->
 <section class="soft" id="reze"><div class="container">
 <div class="section-head"><span class="kicker">Espiritualidade</span><h2>Reze conosco</h2><p>Fortaleça sua fé e apresente suas intenções a Deus.</p></div>
 <div class="prayer-grid">
@@ -193,8 +167,7 @@
 <article class="card prayer-card"><div class="prayer-icon">📿</div><h3>Terço virtual</h3><p>Acompanhe uma sequência guiada de oração do Santo Terço.</p><button class="btn" data-open="terco" type="button">Rezar o terço</button></article>
 </div>
 </div></section>
-
-<!-- SEÇÃO AGENDA: eventos e materiais gerados por js/03-secoes.js (renderAgenda); dados em js/01-data.js -->
+<!-- SEÇÃO AGENDA: eventos e materiais (cards criados pelo JavaScript em #agendaGrid) e botão do calendário completo. -->
 <section class="agenda-section" id="agenda"><div class="container">
 <div class="agenda-heading">
 <div><span class="kicker">Agenda e materiais</span><h2>Próximos encontros</h2><p>Celebrações, formações e materiais para acompanhar a vida da nossa comunidade.</p></div>
@@ -202,32 +175,39 @@
 </div>
 <div class="agenda-grid" id="agendaGrid"></div>
 </div></section>
-
-<!-- SEÇÃO NOTÍCIAS: cards estáticos abaixo (carrossel em js/09-ux.js). Texto completo de cada notícia fica em js/01-data.js (newsArticles) e deve manter a MESMA ORDEM dos cards -->
+<!-- SEÇÃO ANIVERSARIANTES E NOTÍCIAS: cartão de aniversariantes + carrossel de notícias. -->
 <section class="news-section" id="noticias">
 <div class="container">
 <div class="news-heading">
 <div>
 <span class="news-kicker">Comunicação</span>
-<h2>Últimas notícias</h2>
-<p>Acompanhe as notícias e atividades da paróquia.</p>
+<h2>Aniversariantes e notícias</h2>
+<p>Celebramos a vida de nossa comunidade e acompanhamos suas novidades.</p>
 </div>
 <button class="news-all-button" id="allNewsButton" type="button">Todas as notícias</button>
 </div>
-
-<!-- Carrossel de notícias (clones dos extremos criados em js/09-ux.js > initNewsCarousel) -->
 <div class="news-carousel-viewport" id="newsCarouselViewport"><div class="news-grid editorial-news-grid" id="newsGrid">
-<article class="news-card">
-<img alt="Ação solidária de distribuição de agasalhos" class="news-photo" src="assets/img/acao-solidaria-de-distribuicao-de-agasalhos.webp"/>
-<div class="news-card-content">
-<time datetime="2026-05-20">20/05/2026</time>
-<h3>Pastoral da Caridade inicia campanha do agasalho</h3>
-<p>A campanha arrecada roupas, cobertores e alimentos para as famílias acompanhadas pela paróquia.</p>
-<div class="news-card-actions"><button class="news-read-button" data-news="0" type="button">Ler a notícia →</button><button class="news-share-button" data-share-news="0" type="button" aria-label="Compartilhar notícia pelo WhatsApp">↗ Compartilhar</button></div>
+<!-- Cartão de ANIVERSARIANTES do mês (lista paginada pelo JavaScript). -->
+<article class="news-card birthday-card">
+<div class="birthday-panel">
+<div class="birthday-panel-head"><span>🎂</span><strong id="birthdayMonthTitle">Aniversariantes</strong><small id="birthdayMonthTag">NOVEMBRO</small></div>
+<div class="birthday-list" id="birthdayList" aria-label="Lista de aniversariantes">
+<div class="birthday-person"><span class="birthday-day">02</span><span><b>Lucas Almeida</b><small>Comunidade Matriz</small></span></div>
+<div class="birthday-person"><span class="birthday-day">03</span><span><b>Maria Aparecida</b><small>Comunidade Matriz</small></span><span class="tither-heart" tabindex="0" aria-label="Dizimista"><span aria-hidden="true">♥</span><em>Dizimista</em></span></div>
+<div class="birthday-person"><span class="birthday-day">05</span><span><b>Camila Santos</b><small>Comunidade Santa Rita</small></span></div>
+<div class="birthday-person"><span class="birthday-day">08</span><span><b>José Carlos</b><small>Comunidade Santa Rita</small></span></div>
+<div class="birthday-person"><span class="birthday-day">10</span><span><b>Rafael Oliveira</b><small>Comunidade São José</small></span><span class="tither-heart" tabindex="0" aria-label="Dizimista"><span aria-hidden="true">♥</span><em>Dizimista</em></span></div>
+<div class="birthday-person"><span class="birthday-day">12</span><span><b>Ana Paula</b><small>Comunidade São José</small></span></div>
+<div class="birthday-person"><span class="birthday-day">15</span><span><b>Beatriz Lima</b><small>Comunidade Nossa Senhora</small></span></div>
+<div class="birthday-person"><span class="birthday-day">19</span><span><b>João Pedro</b><small>Comunidade Matriz</small></span></div>
+<div class="birthday-person"><span class="birthday-day">22</span><span><b>Marcos Ferreira</b><small>Comunidade São Judas</small></span></div>
+<div class="birthday-person"><span class="birthday-day">27</span><span><b>Rita de Cássia</b><small>Comunidade Nossa Senhora</small></span></div>
+<div class="birthday-person"><span class="birthday-day">30</span><span><b>Paulo Henrique</b><small>Comunidade São Paulo</small></span></div>
 </div>
-</article>
+</div></article>
+<!-- Card de notícia: imagem, data, título, resumo e botões "Ler a notícia" / compartilhar. -->
 <article class="news-card">
-<img alt="Catequista acompanha crianças em atividade de formação" class="news-photo" src="assets/img/catequista-acompanha-criancas-em-atividade-de-formacao.webp"/>
+<img alt="Catequista acompanha crianças em atividade de formação" class="news-photo" src="imgs/noticias/noticia-catequese.webp"/>
 <div class="news-card-content">
 <time datetime="2026-02-02">02/02/2026</time>
 <h3>Catequese abre inscrições para 2026</h3>
@@ -235,8 +215,9 @@
 <div class="news-card-actions"><button class="news-read-button" data-news="1" type="button">Ler a notícia →</button><button class="news-share-button" data-share-news="1" type="button" aria-label="Compartilhar notícia pelo WhatsApp">↗ Compartilhar</button></div>
 </div>
 </article>
+<!-- Card de notícia: imagem, data, título, resumo e botões "Ler a notícia" / compartilhar. -->
 <article class="news-card">
-<img alt="Procissão religiosa em celebração comunitária" class="news-photo" src="assets/img/procissao-religiosa-em-celebracao-comunitaria.webp"/>
+<img alt="Procissão religiosa em celebração comunitária" class="news-photo" src="imgs/noticias/noticia-procissao.webp"/>
 <div class="news-card-content">
 <time datetime="2026-01-26">26/01/2026</time>
 <h3>Festa do padroeiro reúne a comunidade do centro e dos bairros</h3>
@@ -244,24 +225,27 @@
 <div class="news-card-actions"><button class="news-read-button" data-news="2" type="button">Ler a notícia →</button><button class="news-share-button" data-share-news="2" type="button" aria-label="Compartilhar notícia pelo WhatsApp">↗ Compartilhar</button></div>
 </div>
 </article>
+<!-- Card de notícia: imagem, data, título, resumo e botões "Ler a notícia" / compartilhar. -->
 <article class="news-card">
-<img alt="Encontro de jovens da paróquia" class="news-photo" loading="lazy" src="assets/img/acao-solidaria-de-distribuicao-de-agasalhos.webp"/>
+<img alt="Encontro de jovens da paróquia" class="news-photo" loading="lazy" src="imgs/noticias/noticia-jovens.webp"/>
 <div class="news-card-content">
 <time datetime="2026-01-18">18/01/2026</time>
 <h3>Encontro de jovens fortalece a caminhada de fé</h3>
 <p>Jovens das comunidades participaram de uma tarde de oração, partilha e convivência.</p>
 <div class="news-card-actions"><button class="news-read-button" data-news="3" type="button">Ler a notícia →</button><button class="news-share-button" data-share-news="3" type="button" aria-label="Compartilhar notícia pelo WhatsApp">↗ Compartilhar</button></div>
 </div>
-</article><article class="news-card">
-<img alt="Encontro de formação das pastorais" class="news-photo" loading="lazy" src="assets/img/catequista-acompanha-criancas-em-atividade-de-formacao.webp"/>
+</article><!-- Card de notícia: imagem, data, título, resumo e botões "Ler a notícia" / compartilhar. -->
+<article class="news-card">
+<img alt="Encontro de formação das pastorais" class="news-photo" loading="lazy" src="imgs/noticias/noticia-catequese.webp"/>
 <div class="news-card-content">
 <time datetime="2026-01-12">12/01/2026</time>
 <h3>Pastorais se reúnem para planejar o ano pastoral</h3>
 <p>Representantes das equipes alinharam propostas e ações para o calendário paroquial.</p>
 <div class="news-card-actions"><button class="news-read-button" data-news="4" type="button">Ler a notícia →</button><button class="news-share-button" data-share-news="4" type="button" aria-label="Compartilhar notícia pelo WhatsApp">↗ Compartilhar</button></div>
 </div>
-</article><article class="news-card">
-<img alt="Famílias reunidas em atividade comunitária" class="news-photo" loading="lazy" src="assets/img/procissao-religiosa-em-celebracao-comunitaria.webp"/>
+</article><!-- Card de notícia: imagem, data, título, resumo e botões "Ler a notícia" / compartilhar. -->
+<article class="news-card">
+<img alt="Famílias reunidas em atividade comunitária" class="news-photo" loading="lazy" src="imgs/noticias/noticia-procissao.webp"/>
 <div class="news-card-content">
 <time datetime="2026-01-05">05/01/2026</time>
 <h3>Famílias participam de momento de oração e convivência</h3>
@@ -269,6 +253,7 @@
 <div class="news-card-actions"><button class="news-read-button" data-news="5" type="button">Ler a notícia →</button><button class="news-share-button" data-share-news="5" type="button" aria-label="Compartilhar notícia pelo WhatsApp">↗ Compartilhar</button></div>
 </div>
 </article></div>
+<!-- Controles do carrossel de notícias (bolinhas e setas). -->
 <div aria-label="Navegação das notícias" class="news-carousel-controls">
 <div class="news-carousel-dots" id="newsCarouselDots"></div>
 <div class="news-carousel-arrows">
@@ -278,42 +263,43 @@
 </div>
 </div>
 </div></section>
-
-<!-- SEÇÃO GALERIA + APOIO: galeria de fotos (visualizador em js/07-galeria.js) e bloco do PIX (QR Code ainda é um espaço reservado) -->
+<!-- SEÇÃO GALERIA + APOIO: fotos da vida da comunidade e chamada para contribuir. -->
 <section class="soft" id="apoie"><div class="container"><div class="mission-gallery-layout">
 <div class="community-gallery"><div class="gallery-heading"><span class="eyebrow">Vida em comunidade</span><h2>Galeria de momentos</h2><p>Registros de fé, encontros, celebrações e serviço que fazem parte da nossa caminhada.</p></div>
-
-<!-- Galeria de momentos: cada botão abre o visualizador em tela cheia (js/07-galeria.js) -->
+<!-- Galeria de momentos: clicar numa foto abre o visualizador em tela cheia. -->
 <div class="gallery-grid"><button class="gallery-item" data-gallery="0" type="button">
-<img alt="Celebração de Santo Antônio" src="assets/img/celebracao-de-santo-antonio.webp"/>
+<img alt="Celebração de Santo Antônio" src="imgs/galeria/galeria-01-santo-antonio.webp"/>
 <span>Celebração de Santo Antônio</span></button><button class="gallery-item" data-gallery="1" type="button">
-<img alt="Adoração e oração" src="assets/img/adoracao-e-oracao.webp"/>
+<img alt="Adoração e oração" src="imgs/galeria/galeria-02-adoracao-e-oracao.webp"/>
 <span>Adoração e oração</span></button><button class="gallery-item" data-gallery="2" type="button">
-<img alt="Pastores da nossa Igreja" src="assets/img/pastores-da-nossa-igreja.webp"/>
+<img alt="Pastores da nossa Igreja" src="imgs/galeria/galeria-03-pastores.webp"/>
 <span>Pastores da nossa Igreja</span></button><button class="gallery-item" data-gallery="3" type="button">
-<img alt="Comunidade reunida" src="assets/img/comunidade-reunida.webp"/>
+<img alt="Comunidade reunida" src="imgs/galeria/galeria-04-comunidade-reunida.webp"/>
 <span>Comunidade reunida</span></button><button class="gallery-item" data-gallery="4" type="button">
-<img alt="Encontro e partilha" src="assets/img/encontro-e-partilha.webp"/>
+<img alt="Encontro e partilha" src="imgs/galeria/galeria-05-encontro-e-partilha.webp"/>
 <span>Encontro e partilha</span></button><button class="gallery-item" data-gallery="5" type="button">
-<img alt="Celebração e serviço" src="assets/img/celebracao-e-servico.webp"/>
+<img alt="Celebração e serviço" src="imgs/galeria/galeria-06-celebracao-e-servico.webp"/>
 <span>Celebração e serviço</span></button><button class="gallery-item" data-gallery="6" type="button">
-<img alt="Momento de fé" src="assets/img/momento-de-fe.webp"/>
+<img alt="Momento de fé" src="imgs/galeria/galeria-07-momento-de-fe.webp"/>
 <span>Momento de fé</span></button><button class="gallery-item" data-gallery="7" type="button">
-<img alt="Celebração e comunidade reunida" src="assets/img/celebracao-e-comunidade-reunida.webp"/>
+<img alt="Celebração e comunidade reunida" src="imgs/galeria/galeria-08-celebracao-e-comunidade.webp"/>
 <span>Celebração e comunidade reunida</span></button></div><small class="gallery-note">Registros reais da vida e das celebrações da nossa comunidade.</small></div>
+<!-- Chamada "Participe desta missão" (apoio/Pix) que acompanha a rolagem. -->
 <aside class="support-sticky"><div class="support-copy"><span class="eyebrow">Participe desta missão</span><h2>Ajude-nos a evangelizar</h2><p>Sua contribuição fortalece a vida comunitária, as ações pastorais e as necessidades da paróquia.</p><small>Escaneie o QR Code com o aplicativo do seu banco.</small></div><div class="pix-qr"><div class="qr-placeholder"><span>PIX</span><b>QR CODE</b><small>Inserir QR oficial</small></div><strong>Contribua pelo PIX</strong></div><button class="btn" data-open="apoio" type="button">Saiba como contribuir</button></aside>
 </div></div></section>
-
-<!-- SEÇÃO EQUIPE (Pastores e representantes): clique/Enter abre o perfil (js/03-secoes.js, dados em js/01-data.js > pastorProfiles) -->
+<!-- SEÇÃO EQUIPE: Papa, bispos e padre; clicar num card abre o perfil. -->
 <section id="equipe"><div class="container">
 <div class="section-head"><span class="kicker">Nossa Igreja</span><h2>Pastores e representantes</h2><p>Pessoas que acompanham e servem à caminhada da Igreja.</p></div>
-<div class="team-grid"><article aria-label="Ver perfil de Papa Leão XIV" class="card person" role="button" tabindex="0">
-<img alt="Papa Leão XIV" loading="lazy" src="https://spiritanroma.org/wp-content/uploads/2025/05/Pope-Leo-xiv-bb.jpeg"/>
+<div class="team-grid"><!-- Card de pessoa da equipe (clicar abre o perfil). -->
+<article aria-label="Ver perfil" class="card person" role="button" tabindex="0">
+<img alt="Papa Leão XIV" loading="lazy" src="imgs/equipe/papa-leao-xiv.jpg"/>
 <h3>PAPA LEÃO XIV</h3><p>Papa da Igreja Católica</p>
-</article><article aria-label="Ver perfil de Dom Giambattista Diquattro" class="card person" role="button" tabindex="0"><img alt="Dom Giambattista Diquattro" src="assets/img/dom-giambattista-diquattro.webp"/><h3>DOM GIAMBATTISTA DIQUATTRO</h3><p>Núncio Apostólico</p></article><article aria-label="Ver perfil de Dom Pedro Luiz Stringhini" class="card person" role="button" tabindex="0"><img alt="Dom Pedro Luiz Stringhini" src="assets/img/dom-pedro-luiz-stringhini.webp"/><h3>DOM PEDRO LUIZ STRINGHINI</h3><p>Bispo Diocesano</p></article><article aria-label="Ver perfil de Pe. Victor Almeida M. da Silva" class="card person" role="button" tabindex="0"><img alt="Pe. Victor Almeida M. da Silva" src="assets/img/pe-victor-almeida-m-da-silva.webp"/><h3>PE. VICTOR ALMEIDA M. DA SILVA</h3><p>Pároco</p></article></div>
+</article><!-- Card de pessoa da equipe (clicar abre o perfil). -->
+<article aria-label="Ver perfil" class="card person" role="button" tabindex="0"><img alt="Dom Giambattista Diquattro" src="imgs/equipe/dom-giambattista-diquattro.webp"/><h3>DOM GIAMBATTISTA DIQUATTRO</h3><p>Núncio Apostólico</p></article><!-- Card de pessoa da equipe (clicar abre o perfil). -->
+<article aria-label="Ver perfil" class="card person" role="button" tabindex="0"><img alt="Dom Pedro Luiz Stringhini" src="imgs/equipe/dom-pedro-luiz-stringhini.webp"/><h3>DOM PEDRO LUIZ STRINGHINI</h3><p>Bispo Diocesano</p></article><!-- Card de pessoa da equipe (clicar abre o perfil). -->
+<article aria-label="Ver perfil" class="card person" role="button" tabindex="0"><img alt="Pe. Victor Almeida M. da Silva" src="imgs/equipe/pe-victor-almeida.webp"/><h3>PE. VICTOR ALMEIDA M. DA SILVA</h3><p>Pároco</p></article></div>
 </div></section>
-
-<!-- SEÇÃO CONTATO: endereço, horários, redes sociais e formulário que abre o WhatsApp da secretaria (js/08-interacoes.js) -->
+<!-- SEÇÃO CONTATO: endereço, horários, redes sociais, mapa e formulário (envia para o WhatsApp). -->
 <section class="soft" id="contato"><div class="container">
 <div class="section-head"><span class="kicker">Estamos aqui</span><h2>Entre em contato</h2><p>Será uma alegria receber sua mensagem e acolher você em nossa comunidade.</p></div>
 <div class="contact-grid contact-grid-unified">
@@ -326,13 +312,12 @@
 <div class="contact-socials"><span>Siga a paróquia</span><a aria-label="Instagram" href="https://www.instagram.com/pasaopauloapostolo/" rel="noopener" target="_blank">Instagram</a><a aria-label="Facebook" href="https://www.facebook.com/ParoquiaSaoPauloAp/" rel="noopener" target="_blank">Facebook</a><a aria-label="YouTube" href="https://www.youtube.com/@webtvparoquiasaopauloapost2990" rel="noopener" target="_blank">YouTube</a></div>
 </div>
 <div class="contact-card contact-form-card"><div class="section-head"><span class="kicker">Estamos aqui para te acolher</span><h2>Entre em contato conosco</h2><p>Envie sua mensagem. Estamos aqui para acolher você.</p></div>
-
-<!-- Formulário de contato: monta a mensagem e abre o WhatsApp (js/08-interacoes.js) -->
+<!-- Formulário de contato. -->
 <form class="contact-form contact-form-inline" id="parishContactForm">
-<label>Seu nome<input autocomplete="name" name="nome" placeholder="Seu nome" required/></label>
-<label>Telefone<input autocomplete="tel" name="telefone" placeholder="(11) 99999-9999" required type="tel"/></label>
+<label>Seu nome<input autocomplete="name" name="nome" placeholder="Seu nome" required=""/></label>
+<label>Telefone<input autocomplete="tel" name="telefone" placeholder="(11) 99999-9999" required="" type="tel"/></label>
 <label class="full">Motivo do contato
-<select name="motivo" required>
+<select name="motivo" required="">
 <option value="">Selecione o motivo</option>
 <option>Informações sobre missas e horários</option>
 <option>Batismo e outros sacramentos</option>
@@ -343,30 +328,23 @@
 <option>Agendamento ou atendimento na secretaria</option>
 <option>Outro assunto</option>
 </select></label>
-<label class="message-field">Mensagem<textarea name="mensagem" placeholder="Como podemos ajudar?" required rows="5"></textarea></label>
+<label class="message-field">Mensagem<textarea name="mensagem" placeholder="Como podemos ajudar?" required="" rows="5"></textarea></label>
 <button class="btn" type="submit">Enviar mensagem</button><p aria-live="polite" id="contactFeedback" role="status"></p></form>
 </div></div></div></section>
-
-<!-- FIM do conteúdo da página inicial -->
+<!-- FIM DO CONTEÚDO PRINCIPAL -->
 </main>
-
-<!-- ==================================================================
-  PÁGINA DE LITURGIA DIÁRIA (oculta até o link "#liturgia")
-  Calendário + leituras via API (js/12-liturgia.js) e navegação
-  entre páginas (js/11-liturgia-navegacao.js)
-==================================================================  -->
-<div aria-label="Página Liturgia" class="liturgia-page-view" hidden id="liturgiaPageView"><section class="hero"><div class="hero-inner"><span class="eyebrow">Paróquia São Paulo Apóstolo</span><h1>Liturgia Diária</h1><p>Acompanhe a Palavra de Deus e celebre a vida dos santos.</p></div></section><div class="main-grid" id="liturgyApp">
-
-<!-- Calendário mensal (grade preenchida por js/12-liturgia.js > renderCalendar) -->
+<!-- PÁGINA DE LITURGIA: aparece no lugar do conteúdo principal quando o endereço termina em #liturgia. -->
+<div aria-label="Página Liturgia" class="liturgia-page-view" hidden="True" id="liturgiaPageView"><section class="hero"><div class="hero-inner"><span class="eyebrow">Paróquia São Paulo Apóstolo</span><h1>Liturgia Diária</h1><p>Acompanhe a Palavra de Deus e celebre a vida dos santos.</p></div></section><div class="main-grid" id="liturgyApp">
+<!-- Calendário mensal da Liturgia (dias clicáveis). -->
 <aside class="calendar-card"><div class="calendar-head"><h2 id="monthLabel">Novembro 2026</h2><div class="month-tools"><button aria-label="Mês anterior" class="icon-btn" id="prevMonth" type="button">‹</button><button aria-label="Próximo mês" class="icon-btn" id="nextMonth" type="button">›</button></div></div>
 <div aria-label="Calendário mensal" class="calendar-grid" id="calendarGrid"></div>
 <div class="calendar-legend"><span><i class="legend-dot"></i> Dia selecionado</span><span><i class="legend-dot gold"></i> Hoje</span></div>
 <div class="calendar-note">Selecione qualquer dia para consultar as leituras correspondentes. A disponibilidade das leituras depende da fonte litúrgica consultada.</div>
 </aside>
+<!-- Leituras do dia selecionado: primeira leitura, salmo e evangelho. -->
 <section aria-live="polite" class="day-column" id="dayColumn">
-<article class="day-card"><span class="date-kicker">Dia selecionado</span><div class="selected-date" id="selectedDate">Quinta-feira, 12 de novembro de 2026</div><div class="celebration" id="celebration">Carregando celebração…</div><span class="liturgical-color" id="liturgicalColor"></span><div class="toolbar"><button class="tool-btn" id="shareDay" type="button">Compartilhar no WhatsApp</button><button class="tool-btn" id="todayButton" type="button">Ir para hoje</button></div><p class="status" id="loadStatus">Buscando as leituras…</p><button class="tool-btn retry-btn" id="retryLiturgia" type="button" hidden>Tentar carregar novamente</button></article>
-
-<!-- Controles de acessibilidade: tamanho e tipo de fonte das leituras -->
+<article class="day-card"><span class="date-kicker">Dia selecionado</span><div class="selected-date" id="selectedDate">Quinta-feira, 12 de novembro de 2026</div><div class="celebration" id="celebration">Carregando celebração…</div><span class="liturgical-color" id="liturgicalColor"></span><div class="toolbar"><button class="tool-btn" id="shareDay" type="button">Compartilhar no WhatsApp</button><button class="tool-btn" id="todayButton" type="button">Ir para hoje</button></div><p class="status" id="loadStatus">Buscando as leituras…</p><button class="tool-btn" id="retryLiturgia" type="button" hidden style="margin-top:8px">Tentar carregar novamente</button></article>
+<!-- Acessibilidade das leituras: aumentar/diminuir letra e trocar tipo de fonte. -->
 <div class="reading-accessibility" role="group" aria-label="Acessibilidade das leituras">
   <span class="reading-accessibility-label">Acessibilidade das leituras</span>
   <div class="reading-accessibility-controls">
@@ -376,53 +354,36 @@
     <button class="tool-btn" id="readingFontToggle" type="button" aria-pressed="false">Fonte sem serifa</button>
   </div>
 </div>
-
-<!-- Cartões de leitura (1ª leitura, salmo e Evangelho) com botões de narração por voz -->
 <article class="reading-card" data-reading-card="first"><h3>Primeira leitura</h3><div class="reading-meta" id="firstMeta">—</div><div class="reading-text" id="firstText">Carregando texto bíblico…</div><div class="reading-audio-controls"><button class="tool-btn" type="button" data-reading-play="first">▶ Ouvir leitura</button><button class="tool-btn" type="button" data-reading-pause="first" disabled>Pausar</button><button class="tool-btn" type="button" data-reading-stop="first" disabled>Parar</button><span class="reading-audio-status" data-reading-status="first" role="status" aria-live="polite"></span></div></article>
 <article class="reading-card" data-reading-card="psalm"><h3>Salmo responsorial</h3><div class="reading-meta" id="psalmMeta">—</div><div class="refrao" id="psalmRefrain">—</div><div class="reading-text" id="psalmText">—</div><div class="reading-audio-controls"><button class="tool-btn" type="button" data-reading-play="psalm">▶ Ouvir salmo</button><button class="tool-btn" type="button" data-reading-pause="psalm" disabled>Pausar</button><button class="tool-btn" type="button" data-reading-stop="psalm" disabled>Parar</button><span class="reading-audio-status" data-reading-status="psalm" role="status" aria-live="polite"></span></div></article>
 <article class="reading-card" data-reading-card="gospel"><h3>Evangelho</h3><div class="reading-meta" id="gospelMeta">—</div><div class="reading-text" id="gospelText">—</div><div class="reading-audio-controls"><button class="tool-btn" type="button" data-reading-play="gospel">▶ Ouvir Evangelho</button><button class="tool-btn" type="button" data-reading-pause="gospel" disabled>Pausar</button><button class="tool-btn" type="button" data-reading-stop="gospel" disabled>Parar</button><span class="reading-audio-status" data-reading-status="gospel" role="status" aria-live="polite"></span></div></article>
-
-<!-- Cartão do santo do dia (a história completa abre no diálogo abaixo) -->
-<article class="saint-card" id="saintCard"><img alt="Representação artística de São Josafá" class="saint-photo" id="saintPhoto" loading="lazy" src="https://static.wixstatic.com/media/f42513_c33a4f49272a4adeb4bd2371a3a6dc2d~mv2.png/v1/fill/w_1024%2Ch_1024%2Cal_c/ChatGPT%20Image%205_11_2025%2C%2009_28_01.png"/><div><span class="saint-kicker">Santo do dia</span><h3 id="saintName">São Josafá</h3><p id="saintDescription">Conheça a história, a missão e o testemunho de fé do santo.</p><button class="saint-link" id="saintStoryButton" type="button">Conhecer a história do santo</button></div></article>
+<!-- Cartão do santo do dia (foto, nome e botão da história). -->
+<article class="saint-card" id="saintCard"><img alt="Representação artística de São Josafá" class="saint-photo" id="saintPhoto" loading="lazy" src="imgs/santos/sao-josafa.png"/><div><span class="saint-kicker">Santo do dia</span><h3 id="saintName">São Josafá</h3><p id="saintDescription">Conheça a história, a missão e o testemunho de fé do santo.</p><button class="saint-link" id="saintStoryButton" type="button">Conhecer a história do santo</button></div></article>
 </section>
-</div>
-<!-- Diálogo com a história de São Josafá (texto fixo da data de 12/11) -->
-<div aria-hidden="true" aria-labelledby="saintDialogTitle" aria-modal="true" class="saint-dialog" id="saintDialog" role="dialog"><div class="saint-dialog-panel"><button aria-label="Fechar" class="saint-dialog-close" id="closeSaintDialog" type="button">×</button><img alt="Representação artística de São Josafá Kuncewicz" class="saint-dialog-photo" src="https://static.wixstatic.com/media/f42513_c33a4f49272a4adeb4bd2371a3a6dc2d~mv2.png/v1/fill/w_1024%2Ch_1024%2Cal_c/ChatGPT%20Image%205_11_2025%2C%2009_28_01.png"/><span class="saint-kicker">Santo do dia · 12 de novembro</span><h2 id="saintDialogTitle">São Josafá Kuncewicz</h2><p class="saint-dialog-subtitle">Bispo e mártir da unidade da Igreja · c. 1580–1623</p><p>São Josafá nasceu por volta de 1580, na região da atual Ucrânia. Em 1604, ingressou no mosteiro basiliano da Santíssima Trindade, em Vilna, adotando o nome de Josafá. Foi ordenado sacerdote em 1609 e consagrado bispo em 1617.</p><p>Como pastor, dedicou sua vida à unidade dos cristãos e à comunhão com a Igreja de Roma, preservando a tradição litúrgica bizantina. Cuidava dos pobres, visitava suas comunidades e promovia a formação do clero.</p><p>Em 12 de novembro de 1623, durante uma visita pastoral a Vitebsk, foi morto por opositores. Sua morte foi reconhecida como martírio. Foi canonizado pelo Papa Pio IX em 1867.</p><div class="saint-dialog-note"><strong>Seu testemunho:</strong> São Josafá é lembrado pelo compromisso com a unidade, pela coragem diante das dificuldades e pelo serviço pastoral ao povo de Deus.</div><a class="saint-link" href="https://www.vaticannews.va/pt/santo-do-dia/11/12/s--josafa-kuncewicz--bispo-e-martir.html" rel="noopener" target="_blank">Fonte: Vatican News ↗</a></div></div></div>
-<!-- RODAPÉ -->
+</div><!-- Pop-up com a história do santo do dia (página de Liturgia). -->
+<div aria-hidden="true" aria-labelledby="saintDialogTitle" aria-modal="true" class="saint-dialog" id="saintDialog" role="dialog"><div class="saint-dialog-panel"><button aria-label="Fechar" class="saint-dialog-close" id="closeSaintDialog" type="button">×</button><img alt="Representação artística de São Josafá Kuncewicz" class="saint-dialog-photo" src="imgs/santos/sao-josafa.png"/><span class="saint-kicker">Santo do dia · 12 de novembro</span><h2 id="saintDialogTitle">São Josafá Kuncewicz</h2><p class="saint-dialog-subtitle">Bispo e mártir da unidade da Igreja · c. 1580–1623</p><p>São Josafá nasceu por volta de 1580, na região da atual Ucrânia. Em 1604, ingressou no mosteiro basiliano da Santíssima Trindade, em Vilna, adotando o nome de Josafá. Foi ordenado sacerdote em 1609 e consagrado bispo em 1617.</p><p>Como pastor, dedicou sua vida à unidade dos cristãos e à comunhão com a Igreja de Roma, preservando a tradição litúrgica bizantina. Cuidava dos pobres, visitava suas comunidades e promovia a formação do clero.</p><p>Em 12 de novembro de 1623, durante uma visita pastoral a Vitebsk, foi morto por opositores. Sua morte foi reconhecida como martírio. Foi canonizado pelo Papa Pio IX em 1867.</p><div class="saint-dialog-note"><strong>Seu testemunho:</strong> São Josafá é lembrado pelo compromisso com a unidade, pela coragem diante das dificuldades e pelo serviço pastoral ao povo de Deus.</div><a class="saint-link" href="https://www.vaticannews.va/pt/santo-do-dia/11/12/s--josafa-kuncewicz--bispo-e-martir.html" rel="noopener" target="_blank">Fonte: Vatican News ↗</a></div></div></div><!-- RODAPÉ: logo, links e direitos autorais. -->
 <footer><div class="container">
-<div class="footer-top"><div class="footer-brand"><img alt="Logo da Paróquia" src="assets/img/logo-da-paroquia.png"/><strong>Paróquia São Paulo Apóstolo<br/><small class="footer-location">Ferraz de Vasconcelos · SP</small></strong></div>
+<div class="footer-top"><div class="footer-brand"><img alt="Logo da Paróquia" src="imgs/logo/logo-paroquia.png"/><strong>Paróquia São Paulo Apóstolo<br/><small style="font:12px Arial;color:#d6c4cb">Ferraz de Vasconcelos · SP</small></strong></div>
 <div class="footer-links"><a href="#historia">História</a><a href="#comunidades">Comunidades</a><a href="#pastorais">Pastorais</a><a href="#contato">Contato</a></div></div>
 <div class="copyright">© <span id="year"></span> Paróquia São Paulo Apóstolo. Todos os direitos reservados.</div>
 </div></footer>
-
-<!-- MODAL GENÉRICO: todos os pop-ups do site (comunidades, pastorais, oração, dízimo,
-  notícias, calendário...) usam este contêiner. Conteúdo injetado por openModal() em js/02-modal.js -->
+<!-- POP-UP GENÉRICO: o JavaScript preenche #modalContent (detalhes de comunidade, pastoral, oração, notícia, etc.). -->
 <div aria-hidden="true" aria-labelledby="modalTitle" aria-modal="true" class="modal-backdrop" id="modalBackdrop" role="dialog">
 <div class="modal" role="document"><button aria-label="Fechar" class="modal-close" id="modalClose" type="button">×</button><div id="modalContent"></div></div>
 </div>
 
-<!-- Visualizador em tela cheia da galeria de momentos (controlado por js/07-galeria.js) -->
+<!-- Visualizador em tela cheia da galeria de momentos. -->
 <div aria-hidden="true" class="moment-gallery-viewer" id="moment-gallery-viewer">
-  <button aria-label="Fechar imagem" class="moment-gallery-close" type="button">×</button>
-  <button aria-label="Imagem anterior" class="moment-gallery-prev" type="button">❮</button>
-  <figure><img alt="" id="moment-gallery-full-image"><figcaption id="moment-gallery-full-caption"></figcaption></figure>
-  <button aria-label="Próxima imagem" class="moment-gallery-next" type="button">❯</button>
+<button aria-label="Fechar imagem" class="moment-gallery-close" type="button">×</button>
+<button aria-label="Imagem anterior" class="moment-gallery-prev" type="button">❮</button>
+<figure><img alt="" id="moment-gallery-full-image"/><figcaption id="moment-gallery-full-caption"></figcaption></figure>
+<button aria-label="Próxima imagem" class="moment-gallery-next" type="button">❯</button>
 </div>
 
-<!-- SCRIPTS: ficam no fim do <body> e SEM "defer" de propósito (a ordem e o momento
-     de execução importam: 09-ux.js e 10-radio.js esperam o DOMContentLoaded para
-     rodar DEPOIS de 06-main.js renderizar os cards). -->
-<script src="js/01-data.js"></script>
-<script src="js/02-modal.js"></script>
-<script src="js/03-secoes.js"></script>
-<script src="js/04-oracao.js"></script>
-<script src="js/05-dizimo-secretaria.js"></script>
-<script src="js/06-main.js"></script>
-<script src="js/07-galeria.js"></script>
-<script src="js/08-interacoes.js"></script>
-<script src="js/09-ux.js"></script>
-<script src="js/10-radio.js"></script>
-<script src="js/11-liturgia-navegacao.js"></script>
-<script src="js/12-liturgia.js"></script>
+<!-- POP-UP DE INSCRIÇÃO nos sacramentos (envia os dados para o WhatsApp). -->
+<div id="enrollmentModal" role="dialog" aria-modal="true" aria-labelledby="enrollTitle"><div class="enroll-box"><h2 id="enrollTitle">Inscrição</h2><p>Preencha os dados para iniciar sua inscrição. A secretaria confirmará os próximos passos.</p><form id="enrollForm"><div class="enroll-grid"><label class="full">Sacramento / atividade<select name="sacramento" id="enrollSacramento"><option>Batismo</option><option>Catequese</option><option>Crisma</option></select></label><label>Nome da pessoa<input name="nome" required></label><label>Data de nascimento<input name="nascimento" type="date" required></label><label class="full">Endereço completo<input name="endereco" required></label><label>Telefone<input name="telefone" type="tel" required></label><label>Nome do responsável<input name="responsavel"></label><label>Telefone do responsável<input name="telResponsavel" type="tel"></label><label>E-mail<input name="email" type="email"></label><label class="full">Observações<textarea name="observacoes" rows="3"></textarea></label></div><div class="enroll-actions"><button type="button" class="secondary" id="closeEnroll">Cancelar</button><button type="submit">Enviar pelo WhatsApp</button></div></form></div></div>
+
+<!-- Todos os scripts do site (menus, pop-ups, rádio, liturgia, etc.) -->
+<script src="js/script.js"></script>
 </body>
 </html>

@@ -1,62 +1,64 @@
-# Site da Paróquia São Paulo Apóstolo
+# Paróquia São Paulo Apóstolo — Site
 
-Site estático (HTML + CSS + JavaScript puro). Abra o `index.html` no navegador ou publique a pasta inteira em qualquer hospedagem.
+Site institucional da paróquia (HTML + CSS + JavaScript puros, sem frameworks).
+Basta enviar a pasta inteira para o servidor e abrir `index.html`.
 
 ## Estrutura
 
 ```
-site-paroquia/
-├── index.html            Estrutura e textos fixos da página (comentada por seção)
-├── css/                  Estilos (14 arquivos, carregados NA ORDEM do número)
-├── js/                   Scripts (12 arquivos, carregados NA ORDEM do número)
-└── assets/
-    ├── img/              Todas as imagens (antes estavam embutidas em base64)
-    └── video/            Coloque aqui o vídeo institucional
+paroquia/
+├── index.html                      Estrutura da página (textos e seções)
+├── css/
+│   └── style.css                   Todo o visual (cores, layout, animações, celular)
+├── js/
+│   └── script.js                   Todo o comportamento (menus, pop-ups, rádio, liturgia...)
+├── imgs/                           Todas as imagens do site
+│   ├── logo/                       Logo da paróquia
+│   ├── banner/                     Imagem de fundo do banner
+│   ├── hero/                       Santo do topo da página
+│   ├── noticias/                   Fotos das notícias
+│   ├── galeria/                    Galeria de momentos (8 fotos)
+│   ├── equipe/                     Pastores e representantes
+│   ├── comunidades/                Foto de cada comunidade e do seu coordenador
+│   ├── pastorais/                  Foto do coordenador de cada pastoral
+│   ├── sacramentos/                Imagens dos sete sacramentos e fundos
+│   ├── santos/                     Imagens do santo do dia
+│   └── pix/                        QR Code do Pix
+├── videos/                         Vídeo institucional (ver abaixo)
+└── baixar_imagens_externas.py      Script de uso único (ver abaixo)
 ```
 
-### CSS (a ordem importa)
-O CSS original era um acúmulo de ajustes sobrescrevendo uns aos outros (muitos `!important`).
-Para não mudar o visual, a **ordem de cascata foi preservada**: cada arquivo mantém um comentário
-com o nome do bloco original. Não reordene os `<link>` no `index.html`.
+## Antes de publicar (2 passos)
 
-| Arquivos | Conteúdo |
-|---|---|
-| 01–06 | Base original: variáveis, cabeçalho, hero, seções, modais, refinamentos |
-| 07–11 | Camadas de ajustes: galeria, oração/PIX, sistema visual, contato, rádio, faixa de liturgia |
-| 12–13 | Visualizador da galeria e página de Liturgia |
-| 14 | Classes que substituíram estilos inline |
+1. **Imagens que antes eram links externos.** Rode uma vez, no seu computador com internet:
+   `python baixar_imagens_externas.py`
+   Ele salva em `imgs/` as 15 imagens (Papa, santos, sacramentos e fundos) que o site antigo buscava em outros sites.
+   Se alguma falhar, basta salvar o arquivo na pasta com o mesmo nome listado no script.
+2. **Vídeo institucional.** Coloque `video_institucional_demonstrativo.mp4` dentro da pasta `videos/`.
 
-### JavaScript (a ordem importa)
-| Arquivo | Função |
-|---|---|
-| `01-data.js` | **Dados do site**: comunidades, pastorais, agenda, notícias, perfis, número do WhatsApp |
-| `02-modal.js` | Modal genérico usado em todo o site |
-| `03-secoes.js` | Sacramentos, agenda/calendário, notícias, equipe, comunidades, pastorais |
-| `04-oracao.js` | Vela virtual, intenção de missa e terço |
-| `05-dizimo-secretaria.js` | Modais de dízimo, secretaria e apoio |
-| `06-main.js` | Inicialização e eventos globais |
-| `07-galeria.js` | Visualizador de fotos |
-| `08-interacoes.js` | Botão flutuante do WhatsApp, download de materiais, formulário de contato |
-| `09-ux.js` | Menu mobile, cabeçalho dinâmico, carrossel de notícias |
-| `10-radio.js` | Mini-player de rádio católica |
-| `11-liturgia-navegacao.js` | Alterna entre página inicial e página de Liturgia |
-| `12-liturgia.js` | Calendário, API das leituras, narração por voz |
+## Como editar
 
-Os scripts ficam no fim do `<body>` **sem `defer`** de propósito: `09-ux.js` e `10-radio.js`
-precisam rodar depois que `06-main.js` renderizar os cards.
+| Quero mudar...                                                | Onde                                                                |
+|---------------------------------------------------------------|---------------------------------------------------------------------|
+| Textos fixos, links, seções                                   | `index.html` (cada seção tem um comentário `<!-- ... -->`)          |
+| Comunidades, pastorais, agenda, notícias, perfis, sacramentos | `js/script.js`, módulo **[01]** (listas "DADOS — ...")              |
+| Cores                                                         | `css/style.css`, seção **[01]**, bloco `:root` (variáveis)          |
+| Qualquer ajuste visual                                        | `css/style.css` (procure o nome do componente em `── Nome ──`)      |
+| Trocar uma foto                                               | Substitua o arquivo em `imgs/` mantendo o mesmo nome                |
+| Aniversariantes                                               | `index.html`, cartão `birthday-card`                                |
 
-## Como atualizar conteúdo
-- **Textos de comunidades, pastorais, agenda, notícias, perfis:** `js/01-data.js`
-- **Número do WhatsApp da secretaria:** constante `WHATSAPP_SECRETARIA` em `js/01-data.js`
-- **Vídeo institucional:** coloque `video_institucional_demonstrativo.mp4` em `assets/video/`
-  (ou mude `INSTITUTIONAL_VIDEO` em `js/01-data.js`)
-- **Notícias:** o card em `index.html` e o texto completo em `newsArticles` precisam estar **na mesma ordem**
-- **Horários de missa:** aparecem em 3 lugares (faixa do topo e seção Contato no `index.html`; comunidades em `01-data.js`)
+Dica: no CSS, quando duas regras mudam a mesma coisa, **a que vem depois vence**. Por isso a ordem das seções [01] a [47] foi mantida igual à do site original.
 
-## Pendências de conteúdo (não são erros de código)
-- Link do grupo de WhatsApp da comunidade ainda é um modelo: `COLE_AQUI_O_CONVITE_DO_GRUPO` (hero, `index.html`)
-- QR Code PIX é um espaço reservado (`index.html`, dízimo e `assets/img/qr-pix-exemplo.png`)
-- Telefones `(11) 0000-xxxx` e "Irmã Helena (exemplo)" são dados de exemplo em `01-data.js`
-- Faixa "Liturgia / Santo do dia" (topo da home) e diálogo do santo estão **fixos** em 12/11 (São Josafá)
-- Horário da missa da Matriz diverge: faixa do topo diz 19h30, comunidade/Contato dizem 19h
-- Materiais da Agenda: o botão gera um `.txt`; os PDFs listados ainda não existem
+## Pendências que já existiam no site original (não foram alteradas)
+
+- O link do grupo de WhatsApp ainda é um espaço reservado: `COLE_AQUI_O_CONVITE_DO_GRUPO` (em `index.html`).
+- Alguns dados são de exemplo (ex.: telefones `(11) 0000-0101`, aniversariantes, "Irmã Helena (exemplo)").
+- O QR Code do Pix em `imgs/pix/qr-code-pix.png` é a imagem usada hoje; troque pelo QR oficial.
+
+## Serviços externos que o site ainda consulta (não são arquivos)
+
+São dados e transmissões ao vivo; não dá para hospedar no seu servidor:
+
+- **Liturgia diária** (leituras do dia): API em `liturgia.up.railway.app` (com alternativas de reserva).
+- **Rádios ao vivo** (Canção Nova, Evangelizar, Colméia): os streams vêm das emissoras.
+- Links de navegação (Instagram, Facebook, YouTube, WhatsApp, Google Maps, Vatican News): apenas abrem outras páginas.
