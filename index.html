@@ -27,7 +27,7 @@
 </a>
 <button aria-expanded="false" aria-label="Abrir menu" class="menu-toggle" id="menuToggle">☰</button>
 <!-- Links do menu: levam às seções da página (#inicio, #comunidades, ...). -->
-<nav aria-label="Navegação principal" class="navlinks" id="navLinks"><a href="#inicio">Paróquia</a><a href="#comunidades">Comunidades</a><a href="#sacramentos">Sacramentos</a><a href="#pastorais">Pastorais</a><a href="#liturgia">Liturgia</a><a href="#noticias">Notícias</a><a href="#contato">Contato</a></nav>
+<nav aria-label="Navegação principal" class="navlinks" id="navLinks"><a href="#inicio">Paróquia</a><a href="#comunidades">Comunidades</a><a href="#sacramentos">Sacramentos</a><a href="#pastorais">Pastorais</a><a href="liturgia.html">Liturgia</a><a href="#noticias">Notícias</a><a href="#contato">Contato</a></nav>
 <button class="nav-action" data-open="dizimo" type="button"><span aria-hidden="true" class="tithe-heart">♡</span> Seja Dizimista</button>
 </div>
 <!-- FAIXA DE MISSAS: horários das celebrações e mini player de rádio. -->
@@ -107,7 +107,7 @@
 <div class="daily-ribbon-gospel">
 <span class="daily-ribbon-kicker">Liturgia</span>
 <span class="daily-ribbon-quote">“Quem procurar salvar a sua vida a perderá; e quem a perder a conservará viva.” <small>Lc 17,33</small></span>
-<a aria-label="Acessar o calendário de Liturgia da paróquia" class="daily-ribbon-access" href="#liturgia" title="Abrir Liturgia">Ver calendário<span aria-hidden="true">↗</span></a>
+<a aria-label="Acessar o calendário de Liturgia da paróquia" class="daily-ribbon-access" href="liturgia.html" title="Abrir Liturgia">Ver calendário<span aria-hidden="true">↗</span></a>
 </div>
 <span aria-hidden="true" class="daily-ribbon-divider"></span>
 <div class="daily-ribbon-saint">
@@ -128,7 +128,7 @@
 <!-- SEÇÃO HISTÓRIA: vídeo institucional, texto sobre a paróquia e números de destaque. -->
 <section id="historia"><div class="container story-grid">
 <button aria-label="Assistir ao vídeo da história da paróquia" class="story-photo video-thumb" data-open="video" type="button">
-<span class="video-play">▶</span><span class="video-caption">Conheça a história da nossa paróquia</span><span class="video-duration">VÍDEO INSTITUCIONAL</span>
+<span class="video-play">▶</span><span class="video-caption">Assistir ao vídeo da história da paróquia</span><span class="video-duration">VÍDEO INSTITUCIONAL</span>
 </button>
 <div class="story-copy"><span class="kicker">Memória e fé</span><h2>Uma história de fé, comunidade e missão.</h2>
 <p>A Paróquia São Paulo Apóstolo é uma comunidade católica em Ferraz de Vasconcelos, chamada a anunciar o Evangelho, celebrar a fé e servir a todos com amor.</p>
@@ -333,35 +333,6 @@
 </div></div></div></section>
 <!-- FIM DO CONTEÚDO PRINCIPAL -->
 </main>
-<!-- PÁGINA DE LITURGIA: aparece no lugar do conteúdo principal quando o endereço termina em #liturgia. -->
-<div aria-label="Página Liturgia" class="liturgia-page-view" hidden="True" id="liturgiaPageView"><section class="hero"><div class="hero-inner"><span class="eyebrow">Paróquia São Paulo Apóstolo</span><h1>Liturgia Diária</h1><p>Acompanhe a Palavra de Deus e celebre a vida dos santos.</p></div></section><div class="main-grid" id="liturgyApp">
-<!-- Calendário mensal da Liturgia (dias clicáveis). -->
-<aside class="calendar-card"><div class="calendar-head"><h2 id="monthLabel">Novembro 2026</h2><div class="month-tools"><button aria-label="Mês anterior" class="icon-btn" id="prevMonth" type="button">‹</button><button aria-label="Próximo mês" class="icon-btn" id="nextMonth" type="button">›</button></div></div>
-<div aria-label="Calendário mensal" class="calendar-grid" id="calendarGrid"></div>
-<div class="calendar-legend"><span><i class="legend-dot"></i> Dia selecionado</span><span><i class="legend-dot gold"></i> Hoje</span></div>
-<div class="calendar-note">Selecione qualquer dia para consultar as leituras correspondentes. A disponibilidade das leituras depende da fonte litúrgica consultada.</div>
-</aside>
-<!-- Leituras do dia selecionado: primeira leitura, salmo e evangelho. -->
-<section aria-live="polite" class="day-column" id="dayColumn">
-<article class="day-card"><span class="date-kicker">Dia selecionado</span><div class="selected-date" id="selectedDate">Quinta-feira, 12 de novembro de 2026</div><div class="celebration" id="celebration">Carregando celebração…</div><span class="liturgical-color" id="liturgicalColor"></span><div class="toolbar"><button class="tool-btn" id="shareDay" type="button">Compartilhar no WhatsApp</button><button class="tool-btn" id="todayButton" type="button">Ir para hoje</button></div><p class="status" id="loadStatus">Buscando as leituras…</p><button class="tool-btn" id="retryLiturgia" type="button" hidden style="margin-top:8px">Tentar carregar novamente</button></article>
-<!-- Acessibilidade das leituras: aumentar/diminuir letra e trocar tipo de fonte. -->
-<div class="reading-accessibility" role="group" aria-label="Acessibilidade das leituras">
-  <span class="reading-accessibility-label">Acessibilidade das leituras</span>
-  <div class="reading-accessibility-controls">
-    <button class="tool-btn" id="readingFontDown" type="button" aria-label="Diminuir tamanho da letra">A−</button>
-    <span class="reading-size-value" id="readingFontValue" aria-live="polite">14 px</span>
-    <button class="tool-btn" id="readingFontUp" type="button" aria-label="Aumentar tamanho da letra">A+</button>
-    <button class="tool-btn" id="readingFontToggle" type="button" aria-pressed="false">Fonte sem serifa</button>
-  </div>
-</div>
-<article class="reading-card" data-reading-card="first"><h3>Primeira leitura</h3><div class="reading-meta" id="firstMeta">—</div><div class="reading-text" id="firstText">Carregando texto bíblico…</div><div class="reading-audio-controls"><button class="tool-btn" type="button" data-reading-play="first">▶ Ouvir leitura</button><button class="tool-btn" type="button" data-reading-pause="first" disabled>Pausar</button><button class="tool-btn" type="button" data-reading-stop="first" disabled>Parar</button><span class="reading-audio-status" data-reading-status="first" role="status" aria-live="polite"></span></div></article>
-<article class="reading-card" data-reading-card="psalm"><h3>Salmo responsorial</h3><div class="reading-meta" id="psalmMeta">—</div><div class="refrao" id="psalmRefrain">—</div><div class="reading-text" id="psalmText">—</div><div class="reading-audio-controls"><button class="tool-btn" type="button" data-reading-play="psalm">▶ Ouvir salmo</button><button class="tool-btn" type="button" data-reading-pause="psalm" disabled>Pausar</button><button class="tool-btn" type="button" data-reading-stop="psalm" disabled>Parar</button><span class="reading-audio-status" data-reading-status="psalm" role="status" aria-live="polite"></span></div></article>
-<article class="reading-card" data-reading-card="gospel"><h3>Evangelho</h3><div class="reading-meta" id="gospelMeta">—</div><div class="reading-text" id="gospelText">—</div><div class="reading-audio-controls"><button class="tool-btn" type="button" data-reading-play="gospel">▶ Ouvir Evangelho</button><button class="tool-btn" type="button" data-reading-pause="gospel" disabled>Pausar</button><button class="tool-btn" type="button" data-reading-stop="gospel" disabled>Parar</button><span class="reading-audio-status" data-reading-status="gospel" role="status" aria-live="polite"></span></div></article>
-<!-- Cartão do santo do dia (foto, nome e botão da história). -->
-<article class="saint-card" id="saintCard"><img alt="Representação artística de São Josafá" class="saint-photo" id="saintPhoto" loading="lazy" src="imgs/santos/sao-josafa.png"/><div><span class="saint-kicker">Santo do dia</span><h3 id="saintName">São Josafá</h3><p id="saintDescription">Conheça a história, a missão e o testemunho de fé do santo.</p><button class="saint-link" id="saintStoryButton" type="button">Conhecer a história do santo</button></div></article>
-</section>
-</div><!-- Pop-up com a história do santo do dia (página de Liturgia). -->
-<div aria-hidden="true" aria-labelledby="saintDialogTitle" aria-modal="true" class="saint-dialog" id="saintDialog" role="dialog"><div class="saint-dialog-panel"><button aria-label="Fechar" class="saint-dialog-close" id="closeSaintDialog" type="button">×</button><img alt="Representação artística de São Josafá Kuncewicz" class="saint-dialog-photo" src="imgs/santos/sao-josafa.png"/><span class="saint-kicker">Santo do dia · 12 de novembro</span><h2 id="saintDialogTitle">São Josafá Kuncewicz</h2><p class="saint-dialog-subtitle">Bispo e mártir da unidade da Igreja · c. 1580–1623</p><p>São Josafá nasceu por volta de 1580, na região da atual Ucrânia. Em 1604, ingressou no mosteiro basiliano da Santíssima Trindade, em Vilna, adotando o nome de Josafá. Foi ordenado sacerdote em 1609 e consagrado bispo em 1617.</p><p>Como pastor, dedicou sua vida à unidade dos cristãos e à comunhão com a Igreja de Roma, preservando a tradição litúrgica bizantina. Cuidava dos pobres, visitava suas comunidades e promovia a formação do clero.</p><p>Em 12 de novembro de 1623, durante uma visita pastoral a Vitebsk, foi morto por opositores. Sua morte foi reconhecida como martírio. Foi canonizado pelo Papa Pio IX em 1867.</p><div class="saint-dialog-note"><strong>Seu testemunho:</strong> São Josafá é lembrado pelo compromisso com a unidade, pela coragem diante das dificuldades e pelo serviço pastoral ao povo de Deus.</div><a class="saint-link" href="https://www.vaticannews.va/pt/santo-do-dia/11/12/s--josafa-kuncewicz--bispo-e-martir.html" rel="noopener" target="_blank">Fonte: Vatican News ↗</a></div></div></div><!-- RODAPÉ: logo, links e direitos autorais. -->
 <footer><div class="container">
 <div class="footer-top"><div class="footer-brand"><img alt="Logo da Paróquia" src="imgs/logo/logo-paroquia.png"/><strong>Paróquia São Paulo Apóstolo<br/><small style="font:12px Arial;color:#d6c4cb">Ferraz de Vasconcelos · SP</small></strong></div>
 <div class="footer-links"><a href="#historia">História</a><a href="#comunidades">Comunidades</a><a href="#pastorais">Pastorais</a><a href="#contato">Contato</a></div></div>
