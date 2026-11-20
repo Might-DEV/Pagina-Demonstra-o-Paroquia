@@ -1032,6 +1032,7 @@ function showSupport() {
 }
 // Inicialização do site: desenha os cards e liga todos os cliques, teclas e formulários.
 function init() {
+  if (!document.getElementById("siteMain")) return;
   // Desenha os cards das comunidades
   renderCommunities();
   // Mostra o primeiro sacramento (Batismo) por padrão
@@ -1520,8 +1521,10 @@ try {
 try {
 (function(){
 const modal=document.getElementById('enrollmentModal'),form=document.getElementById('enrollForm'),sel=document.getElementById('enrollSacramento');
+if(!modal||!form||!sel)return;
 function openEnroll(type){sel.value=type;document.getElementById('enrollTitle').textContent='Inscrição — '+type;modal.classList.add('show');}
-document.getElementById('sacramentFeature').addEventListener('click',e=>{const b=e.target.closest('[data-enroll]');if(b)openEnroll(b.dataset.enroll)});
+const sacramentFeature=document.getElementById('sacramentFeature');
+if(sacramentFeature)sacramentFeature.addEventListener('click',e=>{const b=e.target.closest('[data-enroll]');if(b)openEnroll(b.dataset.enroll)});
 const monthName=new Intl.DateTimeFormat('pt-BR',{month:'long'}).format(new Date());const monthCap=monthName.charAt(0).toUpperCase()+monthName.slice(1);const monthTitle=document.getElementById('birthdayMonthTitle'),monthTag=document.getElementById('birthdayMonthTag');if(monthTitle)monthTitle.textContent='Aniversariantes de '+monthCap;if(monthTag)monthTag.textContent=monthCap.toUpperCase();
 const birthdayItems=[...document.querySelectorAll('.birthday-person')];let birthdayOffset=0;const birthdayNext=document.getElementById('birthdayNext');function showBirthdayPage(){birthdayItems.forEach((item)=>item.style.display='flex');}if(birthdayNext){birthdayNext.addEventListener('click',()=>{birthdayOffset=birthdayOffset+4>=birthdayItems.length?0:birthdayOffset+4;showBirthdayPage();});showBirthdayPage();}
 document.getElementById('closeEnroll').onclick=()=>modal.classList.remove('show');modal.addEventListener('click',e=>{if(e.target===modal)modal.classList.remove('show')});
