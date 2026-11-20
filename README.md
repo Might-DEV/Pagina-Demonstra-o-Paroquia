@@ -1,64 +1,88 @@
 # Paróquia São Paulo Apóstolo — Site
 
-Site institucional da paróquia (HTML + CSS + JavaScript puros, sem frameworks).
-Basta enviar a pasta inteira para o servidor e abrir `index.html`.
+Site institucional da Paróquia São Paulo Apóstolo, desenvolvido com HTML, CSS e JavaScript puros, sem frameworks.
 
-## Estrutura
+## Estrutura atual
 
 ```
-paroquia/
-├── index.html                      Estrutura da página (textos e seções)
+MAICON PROJETO/
+├── index.html          Página principal da paróquia
+├── liturgia.html       Página independente da Liturgia diária
 ├── css/
-│   └── style.css                   Todo o visual (cores, layout, animações, celular)
+│   └── style.css       Estilos compartilhados de todas as páginas
 ├── js/
-│   └── script.js                   Todo o comportamento (menus, pop-ups, rádio, liturgia...)
-├── imgs/                           Todas as imagens do site
-│   ├── logo/                       Logo da paróquia
-│   ├── banner/                     Imagem de fundo do banner
-│   ├── hero/                       Santo do topo da página
-│   ├── noticias/                   Fotos das notícias
-│   ├── galeria/                    Galeria de momentos (8 fotos)
-│   ├── equipe/                     Pastores e representantes
-│   ├── comunidades/                Foto de cada comunidade e do seu coordenador
-│   ├── pastorais/                  Foto do coordenador de cada pastoral
-│   ├── sacramentos/                Imagens dos sete sacramentos e fundos
-│   ├── santos/                     Imagens do santo do dia
-│   └── pix/                        QR Code do Pix
-├── videos/                         Vídeo institucional (ver abaixo)
-└── baixar_imagens_externas.py      Script de uso único (ver abaixo)
+│   ├── script.js       Comportamentos da página principal
+│   └── liturgia.js     Calendário, leituras, API, cache e áudio da Liturgia
+├── imgs/
+│   ├── logo/
+│   ├── banner/
+│   ├── hero/
+│   ├── noticias/
+│   ├── galeria/
+│   ├── equipe/
+│   ├── comunidades/
+│   ├── pastorais/
+│   ├── sacramentos/
+│   ├── santos/
+│   └── pix/
+├── videos/
+│   ├── 54983-490755468.mp4
+│   └── LEIA-ME.txt
+└── README.md
 ```
 
-## Antes de publicar (2 passos)
+## Páginas
 
-1. **Imagens que antes eram links externos.** Rode uma vez, no seu computador com internet:
-   `python baixar_imagens_externas.py`
-   Ele salva em `imgs/` as 15 imagens (Papa, santos, sacramentos e fundos) que o site antigo buscava em outros sites.
-   Se alguma falhar, basta salvar o arquivo na pasta com o mesmo nome listado no script.
-2. **Vídeo institucional.** Coloque `video_institucional_demonstrativo.mp4` dentro da pasta `videos/`.
+### Página principal
+
+O arquivo `index.html` contém as seções da paróquia: início, história, comunidades, sacramentos, pastorais, agenda, notícias, equipe e contato.
+
+### Página de Liturgia
+
+A página `liturgia.html` é separada da página principal. Ela utiliza o `js/liturgia.js` exclusivamente para:
+
+- selecionar datas no calendário;
+- consultar leituras da Liturgia do dia;
+- usar cache local quando a API estiver indisponível;
+- apresentar o santo ou a celebração do dia;
+- permitir narração das leituras;
+- compartilhar o dia pelo WhatsApp.
+
+Os links de “Liturgia” e “Ver calendário” no menu e na faixa diária apontam para `liturgia.html`.
 
 ## Como editar
 
-| Quero mudar...                                                | Onde                                                                |
-|---------------------------------------------------------------|---------------------------------------------------------------------|
-| Textos fixos, links, seções                                   | `index.html` (cada seção tem um comentário `<!-- ... -->`)          |
-| Comunidades, pastorais, agenda, notícias, perfis, sacramentos | `js/script.js`, módulo **[01]** (listas "DADOS — ...")              |
-| Cores                                                         | `css/style.css`, seção **[01]**, bloco `:root` (variáveis)          |
-| Qualquer ajuste visual                                        | `css/style.css` (procure o nome do componente em `── Nome ──`)      |
-| Trocar uma foto                                               | Substitua o arquivo em `imgs/` mantendo o mesmo nome                |
-| Aniversariantes                                               | `index.html`, cartão `birthday-card`                                |
+| Quero mudar... | Arquivo |
+|---|---|
+| Textos e seções da página principal | `index.html` |
+| Menu e conteúdo da página da Liturgia | `liturgia.html` |
+| Dados de comunidades, pastorais, agenda e notícias | `js/script.js` |
+| Comportamento da página principal | `js/script.js` |
+| Calendário e consulta das leituras | `js/liturgia.js` |
+| Cores, layout e responsividade | `css/style.css` |
+| Uma imagem | Substitua o arquivo em `imgs/`, mantendo o mesmo nome |
 
-Dica: no CSS, quando duas regras mudam a mesma coisa, **a que vem depois vence**. Por isso a ordem das seções [01] a [47] foi mantida igual à do site original.
+## Vídeo institucional
 
-## Pendências que já existiam no site original (não foram alteradas)
+O vídeo institucional usado no pop-up da história está em:
 
-- O link do grupo de WhatsApp ainda é um espaço reservado: `COLE_AQUI_O_CONVITE_DO_GRUPO` (em `index.html`).
-- Alguns dados são de exemplo (ex.: telefones `(11) 0000-0101`, aniversariantes, "Irmã Helena (exemplo)").
-- O QR Code do Pix em `imgs/pix/qr-code-pix.png` é a imagem usada hoje; troque pelo QR oficial.
+`videos/54983-490755468.mp4`
 
-## Serviços externos que o site ainda consulta (não são arquivos)
+O caminho é configurado em `js/script.js`, na função `showVideoNotice()`.
 
-São dados e transmissões ao vivo; não dá para hospedar no seu servidor:
+## Publicação
 
-- **Liturgia diária** (leituras do dia): API em `liturgia.up.railway.app` (com alternativas de reserva).
-- **Rádios ao vivo** (Canção Nova, Evangelizar, Colméia): os streams vêm das emissoras.
-- Links de navegação (Instagram, Facebook, YouTube, WhatsApp, Google Maps, Vatican News): apenas abrem outras páginas.
+Envie a pasta inteira para o servidor web e mantenha a estrutura de diretórios. Abra `index.html` para a página principal ou `liturgia.html` diretamente para a Liturgia.
+
+## Serviços externos
+
+- **Liturgia diária:** API em `liturgia.up.railway.app`, com fontes e proxies alternativos.
+- **Rádios ao vivo:** transmissões das emissoras católicas.
+- **WhatsApp, Instagram, Facebook, YouTube, Google Maps e Vatican News:** links externos.
+
+## Pontos que ainda precisam de conteúdo oficial
+
+- Convite do grupo de WhatsApp em `index.html`;
+- QR Code oficial em `imgs/pix/qr-code-pix.png`;
+- Telefones e outros dados demonstrativos;
+- Dados de aniversariantes.
