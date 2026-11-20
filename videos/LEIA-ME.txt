@@ -1,5 +1,5 @@
 Vídeo institucional configurado:
 
-    54983-490755468.mp4
+    video-institucional.mp4
 
-O site aponta para videos/54983-490755468.mp4 no pop-up "Conheça a história da nossa paróquia".
+O site aponta para videos/video-institucional.mp4 no pop-up "Conheça a história da nossa paróquia".

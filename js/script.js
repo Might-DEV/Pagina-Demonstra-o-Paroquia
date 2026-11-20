@@ -257,8 +257,8 @@ function showVideoNotice() {
       <h2 id="modalTitle">História da nossa paróquia</h2>
       <p>Conheça um pouco da caminhada de fé, da missão e das comunidades da nossa paróquia.</p>
       <video class="institutional-demo-video" controls playsinline preload="metadata" poster="">
-        <source src="videos/54983-490755468.mp4" type="video/mp4">
-        Seu navegador não conseguiu reproduzir o vídeo. <a href="videos/54983-490755468.mp4" target="_blank" rel="noopener">Abrir vídeo</a>.
+        <source src="videos/video-institucional.mp4" type="video/mp4">
+        Seu navegador não conseguiu reproduzir o vídeo. <a href="videos/video-institucional.mp4" target="_blank" rel="noopener">Abrir vídeo</a>.
       </video>
     </div>`);
 }

@@ -26,7 +26,7 @@ MAICON PROJETO/
 │   ├── santos/
 │   └── pix/
 ├── videos/
-│   ├── 54983-490755468.mp4
+│   ├── video-institucional.mp4
 │   └── LEIA-ME.txt
 └── README.md
 ```
@@ -66,7 +66,7 @@ Os links de “Liturgia” e “Ver calendário” no menu e na faixa diária ap
 
 O vídeo institucional usado no pop-up da história está em:
 
-`videos/54983-490755468.mp4`
+`videos/video-institucional.mp4`
 
 O caminho é configurado em `js/script.js`, na função `showVideoNotice()`.
 
