@@ -3805,7 +3805,7 @@ header.topbar.is-scrolled .brand img {
 .mobile-nav-backdrop {
   position:fixed;
   inset:0;
-  z-index:85;
+  z-index:40;
   background:rgba(28,10,20,.48);
   border:0;
   opacity:0;
@@ -8147,5 +8147,10 @@ footer .footer-floating-toggle {
   }
   #liturgiaPageView .reading-audio-controls .tool-btn {
     flex:0 1 auto;
+  }
+}
+@media(max-width:860px) {
+  .radio-mini-widget {
+    display:none!important;
   }
 }
