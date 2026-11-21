@@ -378,6 +378,7 @@ let rosaryIndex = 0;
 // Abre o pop-up genérico do site com o conteúdo (HTML) e o título recebidos.
 function openModal(markup, title) {
   modalContent.innerHTML = markup;
+  const isSecretaryModal = !!modalContent.querySelector(".secretary-whatsapp-modal");
   const modalShell = modalContent.closest(".modal");
   if (modalShell) {
     modalShell.classList.toggle("prayer-modal-wide", !!modalContent.querySelector(".prayer-modal-layout"));
@@ -385,7 +386,9 @@ function openModal(markup, title) {
     modalShell.classList.toggle("rosary-modal-wide", !!modalContent.querySelector(".rosary-modal"));
     modalShell.classList.toggle("tithe-modal-wide", !!modalContent.querySelector(".tithe-modal-layout"));
     modalShell.classList.toggle("video-modal-wide", !!modalContent.querySelector(".video-modal-layout"));
+    modalShell.classList.toggle("secretary-modal", isSecretaryModal);
   }
+  modalBackdrop.classList.toggle("secretary-modal-open", isSecretaryModal);
   const h = modalContent.querySelector("h2");
   if (h && title) h.textContent = title;
   modalBackdrop.classList.add("show");
@@ -399,7 +402,8 @@ function closeModal() {
   if ("speechSynthesis" in window) window.speechSynthesis.cancel();
   if (prayerActivityTimer) { clearInterval(prayerActivityTimer); prayerActivityTimer = null; }
   const modalShell = modalContent.closest(".modal");
-  if (modalShell) modalShell.classList.remove("prayer-modal-wide","calendar-modal-wide","rosary-modal-wide","tithe-modal-wide","video-modal-wide");
+  if (modalShell) modalShell.classList.remove("prayer-modal-wide","calendar-modal-wide","rosary-modal-wide","tithe-modal-wide","video-modal-wide","secretary-modal");
+  modalBackdrop.classList.remove("secretary-modal-open");
   modalBackdrop.classList.remove("show");
   modalBackdrop.setAttribute("aria-hidden", "true");
   document.body.classList.remove("modal-open");

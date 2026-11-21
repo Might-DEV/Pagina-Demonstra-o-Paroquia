@@ -5787,6 +5787,28 @@ header .nav-action {
     justify-self:stretch!important;
   }
 }
+@media(max-width:600px) {
+  .modal-backdrop.secretary-modal-open {
+    padding:12px;
+  }
+  .modal.secretary-modal {
+    box-sizing:border-box;
+    width:100%;
+    max-height:calc(100dvh - 24px);
+    padding:18px 16px;
+    overflow-x:hidden;
+  }
+  .secretary-whatsapp-modal {
+    min-width:0;
+  }
+  .secretary-whatsapp-modal h2 {
+    font-size:clamp(24px,8vw,29px);
+    line-height:1.15;
+  }
+  .secretary-whatsapp-form button {
+    min-width:0;
+  }
+}
 
 /* ==========================================================================
    [28] radio-native-player-style
