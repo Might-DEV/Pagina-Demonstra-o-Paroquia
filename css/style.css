@@ -8208,3 +8208,59 @@ footer .footer-floating-toggle {
     display:none!important;
   }
 }
+@media(max-width:650px) {
+  html {
+    overflow-x:clip;
+  }
+  body {
+    overflow-x:clip;
+  }
+  .topbar .nav {
+    gap:8px;
+  }
+  .topbar .brand {
+    min-width:0;
+    flex:1 1 auto;
+  }
+  .topbar .brand span {
+    min-width:0;
+    font-size:clamp(14px,4.2vw,17px);
+  }
+  .topbar .menu-toggle {
+    flex:0 0 44px;
+  }
+  #inicio .hero-copy {
+    min-width:0;
+    max-width:100%;
+  }
+  #inicio .hero-copy h1 {
+    max-width:100%;
+    font-size:clamp(30px,9vw,42px);
+  }
+  #inicio .hero-quote {
+    display:flex!important;
+    width:100%;
+    max-width:100%;
+    min-width:0;
+  }
+  #inicio .hero-quote span {
+    width:100%;
+    max-width:100%;
+    white-space:normal;
+    overflow-wrap:anywhere;
+  }
+  .agenda-grid {
+    grid-template-columns:minmax(0,1fr);
+  }
+  .agenda-card {
+    width:100%;
+    min-width:0;
+  }
+  .sacraments-heading p,
+  #reze .section-head p {
+    width:100%;
+    max-width:100%!important;
+    white-space:normal!important;
+    overflow-wrap:anywhere;
+  }
+}
