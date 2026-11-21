@@ -381,6 +381,7 @@ function openModal(markup, title) {
   const isSecretaryModal = !!modalContent.querySelector(".secretary-whatsapp-modal");
   const modalShell = modalContent.closest(".modal");
   if (modalShell) {
+    modalShell.scrollTop = 0;
     modalShell.classList.toggle("prayer-modal-wide", !!modalContent.querySelector(".prayer-modal-layout"));
     modalShell.classList.toggle("calendar-modal-wide", !!modalContent.querySelector(".calendar-modal"));
     modalShell.classList.toggle("rosary-modal-wide", !!modalContent.querySelector(".rosary-modal"));
@@ -394,7 +395,8 @@ function openModal(markup, title) {
   modalBackdrop.classList.add("show");
   modalBackdrop.setAttribute("aria-hidden", "false");
   document.body.classList.add("modal-open");
-  document.getElementById("modalClose").focus();
+  document.getElementById("modalClose").focus({preventScroll:true});
+  if (modalShell) modalShell.scrollTop = 0;
 }
 // Fecha o pop-up genérico e restaura a rolagem da página.
 function closeModal() {

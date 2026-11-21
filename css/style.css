@@ -5789,24 +5789,56 @@ header .nav-action {
 }
 @media(max-width:600px) {
   .modal-backdrop.secretary-modal-open {
-    padding:12px;
+    padding:8px;
   }
   .modal.secretary-modal {
     box-sizing:border-box;
-    width:100%;
-    max-height:calc(100dvh - 24px);
-    padding:18px 16px;
+    width:min(100%,360px);
+    max-height:72vh;
+    max-height:min(72dvh,640px);
+    padding:14px;
+    border-radius:16px;
     overflow-x:hidden;
+    overscroll-behavior:contain;
   }
   .secretary-whatsapp-modal {
     min-width:0;
   }
   .secretary-whatsapp-modal h2 {
-    font-size:clamp(24px,8vw,29px);
-    line-height:1.15;
+    margin:4px 0 6px;
+    font-size:clamp(22px,6.4vw,27px);
+    line-height:1.12;
+  }
+  .secretary-modal-intro {
+    margin-bottom:12px;
+    font-size:13px;
+    line-height:1.45;
+  }
+  .secretary-whatsapp-form {
+    gap:10px;
+  }
+  .secretary-whatsapp-form>label {
+    gap:5px;
+    font-size:12px;
+  }
+  .secretary-whatsapp-form input,
+  .secretary-whatsapp-form select,
+  .secretary-whatsapp-form textarea {
+    padding:10px 11px;
+    font-size:14px;
+  }
+  .secretary-whatsapp-form textarea {
+    min-height:84px;
+    max-height:130px;
   }
   .secretary-whatsapp-form button {
     min-width:0;
+    justify-self:stretch;
+    width:100%;
+    padding:11px 14px;
+  }
+  .secretary-modal-note {
+    font-size:10px;
   }
 }
 
