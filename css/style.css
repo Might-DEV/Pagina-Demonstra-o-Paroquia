@@ -3819,6 +3819,9 @@ header.topbar.is-scrolled .brand img {
 }
 /* Responsivo: telas de até 960px */
 @media(max-width:960px) {
+  header.topbar {
+    backdrop-filter:none;
+  }
   .topbar .nav {
     position:relative;
   }
@@ -3877,7 +3880,7 @@ header.topbar.is-scrolled .brand img {
     width:36px!important;
   }
   body.mobile-nav-open {
-    overflow:hidden;
+    overflow:visible;
   }
   .nav-action {
     display:none!important;
@@ -6381,12 +6384,14 @@ button.whatsapp-float {
   }
   .daily-ribbon-inner {
     flex-direction:column;
-    align-items:flex-start;
+    align-items:center;
     gap:8px;
   }
   .daily-ribbon-gospel {
     width:100%;
     flex-wrap:wrap;
+    justify-content:center;
+    text-align:center;
     gap:5px 9px;
   }
   .daily-ribbon-kicker {
@@ -6398,7 +6403,7 @@ button.whatsapp-float {
     font-size:12px;
   }
   .daily-ribbon-access {
-    margin-left:auto;
+    margin-inline:auto;
     padding:5px 11px;
   }
   .daily-ribbon-divider {

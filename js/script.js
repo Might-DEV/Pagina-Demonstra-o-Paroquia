@@ -351,24 +351,6 @@ document.querySelectorAll("#equipe .person").forEach((card,index)=>{
  card.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();showPastorProfile(index)}});
 });
 
-// Abre o pop-up com a história do santo do dia.
-function showSaintStory() {
-  openModal(`
-    <article class="saint-modal" aria-labelledby="saintModalTitle">
-      <span class="saint-modal-kicker">Santo do dia · 13 de novembro</span>
-      <div class="saint-modal-portrait-wrap"><img class="saint-modal-portrait" src="imgs/santos/sao-nicolau-i.png" alt="Representação de São Nicolau I, papa" loading="lazy"></div>
-      <h2 id="saintModalTitle">São Nicolau I, papa</h2>
-      <p class="saint-modal-subtitle">Papa · 800–867</p>
-      <p>Nicolau nasceu em Roma no final do século VIII e desde cedo participou da vida da Igreja. Foi eleito Papa em 858 e seu pontificado ficou marcado pela defesa da autoridade e da unidade da Igreja, em um período de tensões entre diferentes comunidades cristãs.</p>
-      <p>Com firmeza e espírito pastoral, procurou proteger a liberdade da Igreja e promover a justiça em questões eclesiais e políticas. Faleceu em 867 e foi sepultado na Basílica de São Pedro.</p>
-      <h3>Seu testemunho de fé</h3>
-      <p>São Nicolau I é lembrado pela coragem em defender a missão do sucessor de Pedro e pela busca da unidade e da fidelidade ao Evangelho.</p>
-      <div class="saint-modal-note"><strong>O que sua história nos ensina:</strong> exercer a autoridade como serviço, defender a justiça e permanecer fiel à missão da Igreja.</div>
-      <a class="saint-modal-source" href="https://www.vaticannews.va/pt/santo-do-dia/11/13.html" target="_blank" rel="noopener">Fonte: Vatican News — Santo do dia ↗</a>
-    </article>
-  `);
-}
-
 // Referências do pop-up genérico (fundo escuro e área de conteúdo).
 const modalBackdrop = document.getElementById("modalBackdrop");
 const modalContent = document.getElementById("modalContent");
@@ -1076,10 +1058,8 @@ function init() {
     const button = e.target.closest("[data-pastoral]");
     if (button) showPastoral(Number(button.dataset.pastoral));
   });
-  // Cliques nos botões com data-open abrem o pop-up correspondente (vela, intenção, terço, dízimo, apoio, vídeo, secretaria) e a história do santo
+  // Cliques nos botões com data-open abrem o pop-up correspondente (vela, intenção, terço, dízimo, apoio, vídeo, secretaria)
   document.addEventListener("click", event => {
-    const saintButton = event.target.closest("[data-saint-story]");
-    if (saintButton) { showSaintStory(); return; }
     const button = event.target.closest("[data-open]");
     if (!button) return;
     const type = button.dataset.open;
@@ -1212,6 +1192,16 @@ try {
     const nav=document.getElementById("navLinks");
     const toggle=document.getElementById("menuToggle");
     if(!nav||!toggle||toggle.dataset.enhanced==="true")return;
+    const header=document.querySelector("header.topbar");
+    function syncMobileNavPosition(){
+      if(!header)return;
+      const headerRect=header.getBoundingClientRect();
+      const top=Math.max(0,Math.min(window.innerHeight-44,Math.round(headerRect.bottom)));
+      document.documentElement.style.setProperty("--mobile-nav-top",top+"px");
+    }
+    syncMobileNavPosition();
+    window.addEventListener("resize",syncMobileNavPosition);
+    window.addEventListener("scroll",syncMobileNavPosition,{passive:true});
     let backdrop=document.getElementById("mobileNavBackdrop");
     if(!backdrop){
       backdrop=document.createElement("button");
@@ -1225,6 +1215,7 @@ try {
     toggle.addEventListener("click",()=>{
       const willOpen=toggle.getAttribute("aria-expanded")!=="true";
       if(willOpen){
+        syncMobileNavPosition();
         nav.classList.add("show");
         backdrop.classList.add("show");
         document.body.classList.add("mobile-nav-open");
@@ -1569,12 +1560,3 @@ document.addEventListener('DOMContentLoaded',()=>{
   console.error('[Erro no módulo 10 - ANIVERSARIANTES — 7 POR PÁGINA]', erro);
 }
 
-/* ==========================================================================
-   [11] FAIXA DE LITURGIA — 13/11/2026
-   Somente no dia 13/11/2026 troca o evangelho e o santo da faixa de liturgia por um texto fixo (São Nicolau I). Nos outros dias não faz nada.
-   ========================================================================== */
-try {
-(()=>{const d=new Date();const key=d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");if(key!=="2026-11-13")return;const q=document.querySelector(".daily-ribbon-quote");const b=document.querySelector(".daily-ribbon-saint-button");if(q)q.innerHTML='“Quem procurar salvar a sua vida a perderá; e quem a perder a conservará viva.” <small>Lc 17,33</small>';if(b){b.textContent="Santa Agostinha Pietrantoni e São Nicolau I ↗";b.setAttribute("aria-label","Conheça Santa Agostinha Pietrantoni e São Nicolau I");}})();
-} catch (erro) {
-  console.error('[Erro no módulo 11 - FAIXA DE LITURGIA — 13/11/2026]', erro);
-}
